@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
+  MyApp({super.key});
+
+  final TextEditingController _outputTextController = TextEditingController();
 
   void _handleCheckConnected() {
+    _outputTextController.text += 'clicked';
     print('Button pressed for');
   }
 
@@ -14,17 +18,11 @@ class MyApp extends StatelessWidget {
     print('Button pressed for');
   }
 
-  void _handleGoFinished(){
+  void _handleGoFinished() {}
 
-  }
+  void _handleGoReady() {}
 
-  void _handleGoReady(){
-
-  }
-
-  void _handleDisconnect(){
-
-  }
+  void _handleDisconnect() {}
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +30,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: title,
-
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.blueGrey
-      ),
+      theme: ThemeData.dark().copyWith(primaryColor: Colors.blueGrey),
       home: Scaffold(
         appBar: AppBar(
           title: const Text(title),
@@ -44,46 +39,56 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: const Text("Check"),
-              trailing: ElevatedButton(
+              trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
                 onPressed: () => _handleCheckConnected(),
-                child: const Text('Button'),
               ),
             ),
             ListTile(
               title: const Text("Connect"),
-              trailing: ElevatedButton(
-                onPressed: () => _handleConnect,
-                child: const Text('Button'),
-              ),
+              trailing: IconButton(
+                  icon: const Icon(Icons.start),
+                  tooltip: 'Increase volume by 10',
+                  onPressed: () => _handleConnect()),
             ),
             ListTile(
               title: const Text("Go Finished"),
-              trailing: ElevatedButton(
-                onPressed: () => _handleGoFinished(),
-                child: const Text('Button'),
-              ),
+              trailing: IconButton(
+                  icon: const Icon(Icons.start),
+                  tooltip: 'Increase volume by 10',
+                  onPressed: () => _handleGoFinished()),
             ),
             ListTile(
               title: const Text("Go Ready"),
-              trailing: ElevatedButton(
-                onPressed: () => _handleGoReady(),
-                child: const Text('Button'),
-              ),
+              trailing: IconButton(
+                  icon: const Icon(Icons.start),
+                  tooltip: 'Increase volume by 10',
+                  onPressed: () => _handleGoReady()),
             ),
             ListTile(
               title: const Text("Start notification"),
-              trailing: ElevatedButton(
-                onPressed: () => _handleCheckConnected(),
-                child: const Text('Button'),
-              ),
+              trailing: IconButton(
+                  icon: const Icon(Icons.start),
+                  tooltip: 'Increase volume by 10',
+                  onPressed: () => _handleCheckConnected()),
             ),
             ListTile(
               title: const Text("Disconnect"),
-              trailing: ElevatedButton(
-                onPressed: () => _handleDisconnect(),
-                child: const Text('Button'),
-              ),
+              trailing: IconButton(
+                  icon: const Icon(Icons.start),
+                  tooltip: 'Increase volume by 10',
+                  onPressed: () => _handleDisconnect()),
             ),
+            TextField(
+              controller: _outputTextController,
+              readOnly: true,
+              maxLines: 10, // Allows multiline input
+              decoration: const InputDecoration(
+                labelText: 'Output window',
+                border: OutlineInputBorder(),
+              ),
+            )
           ],
         ),
       ),
