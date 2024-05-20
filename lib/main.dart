@@ -6,17 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 void main() {
-  runApp(ErgPmDiagnosticsApp());
+  runApp(MaterialApp(home: ErgPmDiagnosticsApp()));
 }
 
-class ErgPmDiagnosticsApp extends StatefulWidget {
+class ErgPmDiagnosticsApp extends StatelessWidget {
   ErgPmDiagnosticsApp({super.key});
 
   final TextEditingController _outputTextController = TextEditingController();
 
-  void _handleCheckConnected() {
+  void _handleCheckConnected(BuildContext context) {
     _outputTextController.text += 'clicked _handleCheckConnected\n';
-    print('Button pressed for');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ScanPageWidget()));
   }
 
   void _handleConnect() {
@@ -35,8 +36,8 @@ class ErgPmDiagnosticsApp extends StatefulWidget {
     _outputTextController.text += 'clicked _handleDisconnect\n';
   }
 
-
-  Widget build_(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     const title = 'PM Diagnostics';
 
     return MaterialApp(
@@ -53,7 +54,7 @@ class ErgPmDiagnosticsApp extends StatefulWidget {
               trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
-                onPressed: () => _handleCheckConnected(),
+                onPressed: () => _handleCheckConnected(context),
               ),
             ),
             ListTile(
@@ -82,7 +83,7 @@ class ErgPmDiagnosticsApp extends StatefulWidget {
               trailing: IconButton(
                   icon: const Icon(Icons.start),
                   tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleCheckConnected()),
+                  onPressed: () => _handleCheckConnected(context)),
             ),
             ListTile(
               title: const Text("Disconnect"),
@@ -105,12 +106,54 @@ class ErgPmDiagnosticsApp extends StatefulWidget {
       ),
     );
   }
-
-  @override
-  State<ErgPmDiagnosticsApp> createState() => _FlutterBlueAppState();
 }
 
-class _FlutterBlueAppState extends State<ErgPmDiagnosticsApp> {
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+
+class ScanPageWidget extends StatefulWidget {
+  const ScanPageWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+
+  @override
+  State<ScanPageWidget> createState() => _FlutterBlueAppState();
+}
+
+class _FlutterBlueAppState extends State<ScanPageWidget> {
   BluetoothAdapterState _adapterState = BluetoothAdapterState.unknown;
 
   late StreamSubscription<BluetoothAdapterState> _adapterStateStateSubscription;
@@ -118,7 +161,8 @@ class _FlutterBlueAppState extends State<ErgPmDiagnosticsApp> {
   @override
   void initState() {
     super.initState();
-    _adapterStateStateSubscription = FlutterBluePlus.adapterState.listen((state) {
+    _adapterStateStateSubscription =
+        FlutterBluePlus.adapterState.listen((state) {
       _adapterState = state;
       if (mounted) {
         setState(() {});
@@ -157,7 +201,8 @@ class BluetoothAdapterStateObserver extends NavigatorObserver {
     super.didPush(route, previousRoute);
     if (route.settings.name == '/DeviceScreen') {
       // Start listening to Bluetooth state changes when a new route is pushed
-      _adapterStateSubscription ??= FlutterBluePlus.adapterState.listen((state) {
+      _adapterStateSubscription ??=
+          FlutterBluePlus.adapterState.listen((state) {
         if (state != BluetoothAdapterState.on) {
           // Pop the current route if Bluetooth is off
           navigator?.pop();
