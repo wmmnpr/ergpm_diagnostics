@@ -16,7 +16,7 @@ class ErgPmDiagnosticsApp extends StatelessWidget {
 
   void _handleCheckConnected(BuildContext context) {
     _outputTextController.text += 'clicked _handleCheckConnected\n';
-    Navigator.push(
+    Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const ScanPageWidget()));
   }
 
