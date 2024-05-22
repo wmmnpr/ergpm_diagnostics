@@ -117,7 +117,7 @@ class _ScanScreenState extends State<ScanScreen> {
             FloatingActionButton(
                 child: const Text("HOME"),
                 onPressed: () => {
-                  Navigator.pop(context)
+                  Navigator.pop(context, 'Updated Data from Second Screen')
                 }
             )
           ]

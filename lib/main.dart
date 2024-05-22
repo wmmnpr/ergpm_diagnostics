@@ -6,18 +6,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 void main() {
-  runApp(MaterialApp(home: ErgPmDiagnosticsApp()));
+  runApp(MaterialApp(home: HomeScreen()));
 }
 
-class ErgPmDiagnosticsApp extends StatelessWidget {
-  ErgPmDiagnosticsApp({super.key});
+class HomeScreen extends StatefulWidget {
+  @override
+  HomeScreenState createState() => HomeScreenState();
+}
+
+class HomeScreenState extends State<HomeScreen> {
+  String data = 'Initial Data';
+
+  @override
+  void initState() {
+    super.initState();
+    // Do any initial setup here
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // This will be called when the widget is rebuilt
+  }
 
   final TextEditingController _outputTextController = TextEditingController();
 
-  void _handleCheckConnected(BuildContext context) {
+  Future<void> _handleCheckConnected(BuildContext context) async {
     _outputTextController.text += 'clicked _handleCheckConnected\n';
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const ScanPageWidget()));
+
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ScanScreen()),
+    );
+    if (result != null) {
+      setState(() {
+        data =
+            result; // Update the state with the result from the second screen
+      });
+    }
   }
 
   void _handleConnect() {
@@ -40,155 +66,70 @@ class ErgPmDiagnosticsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'PM Diagnostics';
 
-    return MaterialApp(
-      title: title,
-      theme: ThemeData.dark().copyWith(primaryColor: Colors.blueGrey),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: const Text("Check"),
-              trailing: IconButton(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(title),
+      ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            title: const Text("Check"),
+            trailing: IconButton(
+              icon: const Icon(Icons.start),
+              tooltip: 'Increase volume by 10',
+              onPressed: () => _handleCheckConnected(context),
+            ),
+          ),
+          ListTile(
+            title: const Text("Connect"),
+            trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
-                onPressed: () => _handleCheckConnected(context),
-              ),
+                onPressed: () => _handleConnect()),
+          ),
+          ListTile(
+            title: const Text("Go Finished"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
+                onPressed: () => _handleGoFinished()),
+          ),
+          ListTile(
+            title: const Text("Go Ready"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
+                onPressed: () => _handleGoReady()),
+          ),
+          ListTile(
+            title: const Text("Start notification"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
+                onPressed: () => _handleCheckConnected(context)),
+          ),
+          ListTile(
+            title: const Text("Disconnect"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
+                onPressed: () => _handleDisconnect()),
+          ),
+          TextField(
+            controller: _outputTextController,
+            readOnly: true,
+            maxLines: 10, // Allows multiline input
+            decoration: const InputDecoration(
+              labelText: 'Output window',
+              border: OutlineInputBorder(),
             ),
-            ListTile(
-              title: const Text("Connect"),
-              trailing: IconButton(
-                  icon: const Icon(Icons.start),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleConnect()),
-            ),
-            ListTile(
-              title: const Text("Go Finished"),
-              trailing: IconButton(
-                  icon: const Icon(Icons.start),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleGoFinished()),
-            ),
-            ListTile(
-              title: const Text("Go Ready"),
-              trailing: IconButton(
-                  icon: const Icon(Icons.start),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleGoReady()),
-            ),
-            ListTile(
-              title: const Text("Start notification"),
-              trailing: IconButton(
-                  icon: const Icon(Icons.start),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleCheckConnected(context)),
-            ),
-            ListTile(
-              title: const Text("Disconnect"),
-              trailing: IconButton(
-                  icon: const Icon(Icons.start),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () => _handleDisconnect()),
-            ),
-            TextField(
-              controller: _outputTextController,
-              readOnly: true,
-              maxLines: 10, // Allows multiline input
-              decoration: const InputDecoration(
-                labelText: 'Output window',
-                border: OutlineInputBorder(),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
-
-class ScanPageWidget extends StatefulWidget {
-  const ScanPageWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-
-  @override
-  State<ScanPageWidget> createState() => _FlutterBlueAppState();
-}
-
-class _FlutterBlueAppState extends State<ScanPageWidget> {
-  BluetoothAdapterState _adapterState = BluetoothAdapterState.unknown;
-
-  late StreamSubscription<BluetoothAdapterState> _adapterStateStateSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _adapterStateStateSubscription =
-        FlutterBluePlus.adapterState.listen((state) {
-      _adapterState = state;
-      if (mounted) {
-        setState(() {});
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _adapterStateStateSubscription.cancel();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    Widget screen = _adapterState == BluetoothAdapterState.on
-        ? const ScanScreen()
-        : BluetoothOffScreen(adapterState: _adapterState);
-
-    return MaterialApp(
-      color: Colors.lightBlue,
-      home: screen,
-      navigatorObservers: [BluetoothAdapterStateObserver()],
-    );
-  }
-}
 
 //
 // This observer listens for Bluetooth Off and dismisses the DeviceScreen
