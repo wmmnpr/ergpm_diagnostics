@@ -19,6 +19,7 @@ class ScanScreen extends StatefulWidget {
 class _ScanScreenState extends State<ScanScreen> {
   List<BluetoothDevice> _systemDevices = [];
   List<ScanResult> _scanResults = [];
+  late BluetoothDevice selectedDevice;
   bool _isScanning = false;
   late StreamSubscription<List<ScanResult>> _scanResultsSubscription;
   late StreamSubscription<bool> _isScanningSubscription;
@@ -83,10 +84,12 @@ class _ScanScreenState extends State<ScanScreen> {
       Snackbar.show(
           ABC.c, prettyException("Connect Error:", e), success: false);
     });
+    /*
     MaterialPageRoute route = MaterialPageRoute(
         builder: (context) => DeviceScreen(device: device),
         settings: RouteSettings(name: '/DeviceScreen'));
-    Navigator.of(context).push(route);
+     */
+    Navigator.of(context).pop(device);
   }
 
   Future onRefresh() {
@@ -117,7 +120,7 @@ class _ScanScreenState extends State<ScanScreen> {
             FloatingActionButton(
                 child: const Text("HOME"),
                 onPressed: () => {
-                  Navigator.pop(context, 'Updated Data from Second Screen')
+                  Navigator.pop(context, null)
                 }
             )
           ]
