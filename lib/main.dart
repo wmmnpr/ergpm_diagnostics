@@ -16,8 +16,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String data = 'Initial Data';
   late BluetoothDevice activeDevice;
-  late BluetoothCharacteristic _bluetoothCharacteristic;
 
+  late BluetoothCharacteristic _notificationEnablerCharacteristic;
+  late BluetoothCharacteristic _bluetoothCharacteristic;
+  late BluetoothCharacteristic _workoutProgressCharacteristic;
+  late BluetoothCharacteristic _strokeDataCharacteristic;
   @override
   void initState() {
     super.initState();
@@ -59,23 +62,33 @@ class _HomeScreenState extends State<HomeScreen> {
         // 2. you must always re-discover services after disconnection!
         _outputTextController.text += activeDevice.connectionState.toString();
 
+        Guid guid2902 = Guid("ce060022-43e5-11e4-916c-0800200c9a66");
+        Guid guid21   = Guid("ce060021-43e5-11e4-916c-0800200c9a66");
+        Guid guid32   = Guid("ce060032-43e5-11e4-916c-0800200c9a66");
+        Guid guid35   = Guid("ce060035-43e5-11e4-916c-0800200c9a66");
+
         activeDevice
             .discoverServices()
-            .then((List<BluetoothService> bluetoothServiceList) => {
-                  for (BluetoothService service in bluetoothServiceList)
-                    {
-                      for (BluetoothCharacteristic characteristic
-                          in service.characteristics)
-                        {
-                          if (characteristic.characteristicUuid ==
-                              Guid("ce060021-43e5-11e4-916c-0800200c9a66"))
-                            {
-                              //_outputTextController.text += "found characteristic:"
-                              _bluetoothCharacteristic = characteristic
-                            }
-                        }
-                    }
-                });
+            .then((List<BluetoothService> bluetoothServiceList) {
+          for (BluetoothService service in bluetoothServiceList) {
+            for (BluetoothCharacteristic characteristic
+                in service.characteristics) {
+              if (characteristic.characteristicUuid == guid21) {
+                _outputTextController.text += "found guid21\n";
+                _bluetoothCharacteristic = characteristic;
+              } else if (characteristic.characteristicUuid == guid32) {
+                _outputTextController.text += "found guid32\n";
+                _workoutProgressCharacteristic = characteristic;
+              }else if (characteristic.characteristicUuid == guid35) {
+                _outputTextController.text += "found guid35\n";
+                _strokeDataCharacteristic = characteristic;
+              }else if (characteristic.characteristicUuid == guid2902) {
+                _outputTextController.text += "found guid2902\n";
+                _notificationEnablerCharacteristic = characteristic;
+              }
+            }
+          }
+        });
       }
     });
     ////////////
@@ -104,16 +117,27 @@ class _HomeScreenState extends State<HomeScreen> {
     return _bluetoothCharacteristic.write(payload);
   }
 
-  void _handleGoFinished() {
-    _outputTextController.text += 'clicked _handleGoFinished\n';
+  void _handleSetupWorkout() {
+    _outputTextController.text += 'clicked _handleSetupWorkout\n';
     int distance = 20;
     sendCommand([0x86], "GOFINISHED").then((v) => {
           sendCommand([0x87], "GOREADY").then((v) => {
                 sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
                     .then((v) => {
-                          sendCommand([0x1A, 0x07, 0x05, 0x05, 0x80, 0x64, 0x00, 0x00, 0x00], "SETUSERCFG1")
+                          sendCommand([
+                            0x1A,
+                            0x07,
+                            0x05,
+                            0x05,
+                            0x80,
+                            0x64,
+                            0x00,
+                            0x00,
+                            0x00
+                          ], "SETUSERCFG1")
                               .then((v) => {
-                                    sendCommand([0x24, 0x02, 0x00, 0x00], "SETPROGRAM")
+                                    sendCommand([0x24, 0x02, 0x00, 0x00],
+                                            "SETPROGRAM")
                                         .then((v) => {
                                               sendCommand([0x85], "GOINUSE")
                                                   .then((v) => {})
@@ -124,8 +148,32 @@ class _HomeScreenState extends State<HomeScreen> {
         });
   }
 
-  void _handleGoReady() {
-    _outputTextController.text += 'clicked _handleGoReady\n';
+  String intArrayToHex(List<int> intArray) {
+    for (var value in intArray) {
+      if (value < 0 || value > 255) {
+        throw ArgumentError('All integers must be in the range 0-255.');
+      }
+    }
+
+    // Convert each integer to a two-character hex string and concatenate them
+    final hexStringBuffer = StringBuffer();
+    for (var value in intArray) {
+      hexStringBuffer.write(value.toRadixString(16).padLeft(2, '0'));
+    }
+    return hexStringBuffer.toString();
+  }
+
+  void _subscribeNotifications() {
+    //_notificationEnablerCharacteristic.write(List.from([0x01,0x00]));
+    _outputTextController.text += 'clicked _subscribeNotifications\n';
+    _strokeDataCharacteristic.setNotifyValue(true);
+    _strokeDataCharacteristic.onValueReceived.listen((data) {
+      _outputTextController.text += '${intArrayToHex(data)}\n';
+    }, onError: (error, stackTrace) {
+      _outputTextController.text += "Error $error\n";
+    }, onDone: () {
+      _outputTextController.text += "listen Done\n";
+    });
   }
 
   void _handleDisconnect() {
@@ -146,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: const Text("Select Device"),
             trailing: IconButton(
               icon: const Icon(Icons.start),
-              tooltip: 'Increase volume by 10',
+              tooltip: 'Select Device',
               onPressed: () => _handleSelectDevice(context),
             ),
           ),
@@ -154,22 +202,22 @@ class _HomeScreenState extends State<HomeScreen> {
             title: const Text("Connect"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Increase volume by 10',
+                tooltip: 'Connect',
                 onPressed: () => _handleConnect()),
           ),
           ListTile(
-            title: const Text("Go Finished"),
+            title: const Text("Setup Workout"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Increase volume by 10',
-                onPressed: () => _handleGoFinished()),
+                tooltip: 'Setup workout',
+                onPressed: () => _handleSetupWorkout()),
           ),
           ListTile(
-            title: const Text("Go Ready"),
+            title: const Text("Subscribe"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Increase volume by 10',
-                onPressed: () => _handleGoReady()),
+                tooltip: 'Subscribe Notification',
+                onPressed: () => _subscribeNotifications()),
           ),
           ListTile(
             title: const Text("Start notification"),
