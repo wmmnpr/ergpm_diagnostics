@@ -1,8 +1,94 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+
+class StrokeData {
+  int elapsedTime = 0;
+  double distance = 0;
+  double driveLength = 0;
+  int driveTime = 0;
+  int strokeRecoveryTime = 0;
+  double strokeDistance = 0;
+  double peakDriveForce = 0;
+  double averageDriveForce = 0;
+  double workPerStroke = 0;
+  int strokeCount = 0;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'elapsedTime': elapsedTime,
+      'distance': distance,
+      'driveLength': driveLength,
+      'driveTime': driveTime,
+      'strokeRecoveryTime': strokeRecoveryTime,
+      'strokeDistance': strokeDistance,
+      'peakDriveForce': peakDriveForce,
+      'averageDriveForce': averageDriveForce,
+      'workPerStroke': workPerStroke,
+      'strokeCount': strokeCount
+    };
+  }
+}
+
+enum StrokeDataBLEPayload {
+  ELAPSED_TIME_LO,
+  ELAPSED_TIME_MID,
+  ELAPSED_TIME_HI,
+  DISTANCE_LO,
+  DISTANCE_MID,
+  DISTANCE_HI,
+  DRIVE_LENGTH,
+  DRIVE_TIME,
+  STROKE_RECOVERY_TIME_LO,
+  STROKE_RECOVERY_TIME_HI,
+  STROKE_DISTANCE_LO,
+  STROKE_DISTANCE_HI,
+  PEAK_DRIVE_FORCE_LO,
+  PEAK_DRIVE_FORCE_HI,
+  AVG_DRIVE_FORCE_LO,
+  AVG_DRIVE_FORCE_HI,
+  WORK_PER_STROKE_LO,
+  WORK_PER_STROKE_HI,
+  STROKE_COUNT_LO,
+  STROKE_COUNT_HI,
+  BLE_PAYLOAD_SIZE
+}
+
+StrokeData intListToStrokeData(List<int> intList) {
+  StrokeData strokeData = StrokeData();
+  // @formatter:off
+  strokeData.elapsedTime = DataConvUtils.getUint24(intList, StrokeDataBLEPayload.ELAPSED_TIME_LO.index) * 10;
+  strokeData.distance = DataConvUtils.getUint24(intList, StrokeDataBLEPayload.DISTANCE_LO.index) / 10;
+  strokeData.driveLength = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.DRIVE_LENGTH.index) / 100;
+  strokeData.driveTime = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.DRIVE_TIME.index) * 10;
+  strokeData.strokeRecoveryTime = (DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_RECOVERY_TIME_LO.index)
+                                      + DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_RECOVERY_TIME_HI.index) * 256) * 10;
+  strokeData.strokeDistance = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.STROKE_DISTANCE_LO.index) / 100;
+  strokeData.peakDriveForce = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.PEAK_DRIVE_FORCE_LO.index) / 10;
+  strokeData.averageDriveForce = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.AVG_DRIVE_FORCE_LO.index) / 10;
+  strokeData.workPerStroke = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.WORK_PER_STROKE_LO.index) / 10;
+  strokeData.strokeCount = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_COUNT_LO.index)
+                                      + DataConvUtils.getUint8(intList,  StrokeDataBLEPayload.STROKE_COUNT_HI.index) * 256;
+  // @formatter:on
+  return strokeData;
+}
+
+class DataConvUtils {
+  static int getUint8(List<int> data, int offset) {
+    return data[offset];
+  }
+
+  static int getUint16(List<int> data, int offset) {
+    return data[offset + 1] << 8 + data[offset];
+  }
+
+  static int getUint24(List<int> data, int offset) {
+    return (data[offset + 2] << 16) + (data[offset + 1] << 8) + (data[offset]);
+  }
+}
 
 void main() {
   runApp(MaterialApp(home: HomeScreen()));
@@ -21,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late BluetoothCharacteristic _bluetoothCharacteristic;
   late BluetoothCharacteristic _workoutProgressCharacteristic;
   late BluetoothCharacteristic _strokeDataCharacteristic;
+
   @override
   void initState() {
     super.initState();
@@ -63,9 +150,9 @@ class _HomeScreenState extends State<HomeScreen> {
         _outputTextController.text += activeDevice.connectionState.toString();
 
         Guid guid2902 = Guid("ce060022-43e5-11e4-916c-0800200c9a66");
-        Guid guid21   = Guid("ce060021-43e5-11e4-916c-0800200c9a66");
-        Guid guid32   = Guid("ce060032-43e5-11e4-916c-0800200c9a66");
-        Guid guid35   = Guid("ce060035-43e5-11e4-916c-0800200c9a66");
+        Guid guid21 = Guid("ce060021-43e5-11e4-916c-0800200c9a66");
+        Guid guid32 = Guid("ce060032-43e5-11e4-916c-0800200c9a66");
+        Guid guid35 = Guid("ce060035-43e5-11e4-916c-0800200c9a66");
 
         activeDevice
             .discoverServices()
@@ -79,10 +166,10 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (characteristic.characteristicUuid == guid32) {
                 _outputTextController.text += "found guid32\n";
                 _workoutProgressCharacteristic = characteristic;
-              }else if (characteristic.characteristicUuid == guid35) {
+              } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
                 _strokeDataCharacteristic = characteristic;
-              }else if (characteristic.characteristicUuid == guid2902) {
+              } else if (characteristic.characteristicUuid == guid2902) {
                 _outputTextController.text += "found guid2902\n";
                 _notificationEnablerCharacteristic = characteristic;
               }
@@ -119,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _handleSetupWorkout() {
     _outputTextController.text += 'clicked _handleSetupWorkout\n';
-    int distance = 20;
+    int distance = 1;
     sendCommand([0x86], "GOFINISHED").then((v) => {
           sendCommand([0x87], "GOREADY").then((v) => {
                 sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
@@ -168,7 +255,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _outputTextController.text += 'clicked _subscribeNotifications\n';
     _strokeDataCharacteristic.setNotifyValue(true);
     _strokeDataCharacteristic.onValueReceived.listen((data) {
-      _outputTextController.text += '${intArrayToHex(data)}\n';
+      String hexData = '${intArrayToHex(data)}\n';
+      String strokeData = json.encode(intListToStrokeData(data).toJson());
+      print("$hexData -> $strokeData");
     }, onError: (error, stackTrace) {
       _outputTextController.text += "Error $error\n";
     }, onDone: () {

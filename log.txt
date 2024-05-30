@@ -1,0 +1,407 @@
+Launching lib/main.dart on macOS in debug mode...
+Building macOS application...
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006001-0004311C0A41801E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006001-0004311C0A41801E, name:My Mac }
+2024-05-30 17:27:30.522 ergpm_diagnostics[7851:5962101] WARNING: Secure coding is automatically enabled for restorable state! However, not on all supported macOS versions of this application. Opt-in to secure coding explicitly by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState:.
+Debug service listening on ws://127.0.0.1:56863/zTqJzMt7K54=/ws
+Syncing files to device macOS...
+
+======== Exception caught by scheduler library =====================================================
+The following assertion was thrown during a scheduler callback:
+There are multiple heroes that share the same tag within a subtree.
+
+Within each subtree for which heroes are to be animated (i.e. a PageRoute subtree), each Hero must have a unique non-null tag.
+In this case, multiple heroes had the following tag: <default FloatingActionButton tag>
+Here is the subtree for one of the offending heroes: Hero
+  tag: <default FloatingActionButton tag>
+  state: _HeroState#5ae00
+When the exception was thrown, this was the stack:
+#0      Hero._allHeroesFor.inviteHero.<anonymous closure> (package:flutter/src/widgets/heroes.dart:277:11)
+#1      Hero._allHeroesFor.inviteHero (package:flutter/src/widgets/heroes.dart:288:8)
+#2      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:306:11)
+#3      SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#4      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#5      ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#6      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#7      MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#8      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#9      SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#10     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#11     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#12     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#13     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#14     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#15     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#16     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#17     MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#18     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#19     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#20     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#21     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#22     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#23     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#24     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#25     MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#26     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#27     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#28     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#29     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#30     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#31     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#32     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#33     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#34     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#35     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#36     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#37     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#38     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#39     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#40     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#41     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#42     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#43     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#44     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#45     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#46     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#47     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#48     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#49     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#50     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#51     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#52     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#53     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#54     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#55     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#56     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#57     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#58     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#59     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#60     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#61     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#62     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#63     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#64     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#65     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#66     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#67     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#68     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#69     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#70     Element.visitChildElements (package:flutter/src/widgets/framework.dart:3720:5)
+#71     Hero._allHeroesFor (package:flutter/src/widgets/heroes.dart:324:13)
+#72     HeroController._startHeroTransition (package:flutter/src/widgets/heroes.dart:959:14)
+#73     HeroController._maybeStartHeroTransition.<anonymous closure> (package:flutter/src/widgets/heroes.dart:914:9)
+#74     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1386:15)
+#75     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1322:11)
+#76     SchedulerBinding._handleDrawFrame (package:flutter/src/scheduler/binding.dart:1169:5)
+#77     _invoke (dart:ui/hooks.dart:312:13)
+#78     PlatformDispatcher._drawFrame (dart:ui/platform_dispatcher.dart:399:5)
+#79     _drawFrame (dart:ui/hooks.dart:283:31)
+====================================================================================================
+2024-05-30 17:27:50.720 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: flutterRestart
+2024-05-30 17:27:50.720 ergpm_diagnostics[7851:5962101] [FBP-iOS] initializing CBCentralManager
+2024-05-30 17:27:50.720 ergpm_diagnostics[7851:5962101] [FBP-iOS] show power alert: yes
+2024-05-30 17:27:50.721 ergpm_diagnostics[7851:5962101] [FBP-iOS] initializing checkForMtuChangesTimer
+2024-05-30 17:27:50.721 ergpm_diagnostics[7851:5962101] [FBP-iOS] disconnectAllDevices(flutterRestart)
+2024-05-30 17:27:50.721 ergpm_diagnostics[7851:5962101] [FBP-iOS] connectedPeripherals: 0
+2024-05-30 17:27:50.721 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: getSystemDevices
+2024-05-30 17:27:50.732 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: startScan
+2024-05-30 17:27:50.785 ergpm_diagnostics[7851:5962101] [FBP-iOS] centralManagerDidUpdateState CBManagerStatePoweredOn
+2024-05-30 17:27:51.499 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: getSystemDevices
+2024-05-30 17:27:51.500 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: startScan
+2024-05-30 17:27:52.580 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: stopScan
+2024-05-30 17:27:54.379 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: connect
+
+======== Exception caught by scheduler library =====================================================
+The following assertion was thrown during a scheduler callback:
+There are multiple heroes that share the same tag within a subtree.
+
+Within each subtree for which heroes are to be animated (i.e. a PageRoute subtree), each Hero must have a unique non-null tag.
+In this case, multiple heroes had the following tag: <default FloatingActionButton tag>
+Here is the subtree for one of the offending heroes: Hero
+  tag: <default FloatingActionButton tag>
+  state: _HeroState#53af0
+When the exception was thrown, this was the stack:
+#0      Hero._allHeroesFor.inviteHero.<anonymous closure> (package:flutter/src/widgets/heroes.dart:277:11)
+#1      Hero._allHeroesFor.inviteHero (package:flutter/src/widgets/heroes.dart:288:8)
+#2      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:306:11)
+#3      SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#4      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#5      ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#6      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#7      MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#8      Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#9      SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#10     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#11     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#12     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#13     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#14     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#15     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#16     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#17     MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#18     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#19     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#20     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#21     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#22     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#23     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#24     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#25     MultiChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6856:16)
+#26     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#27     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#28     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#29     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#30     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#31     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#32     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#33     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#34     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#35     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#36     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#37     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#38     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#39     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#40     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#41     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#42     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#43     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#44     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#45     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#46     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#47     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#48     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#49     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#50     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#51     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#52     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#53     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#54     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#55     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#56     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#57     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#58     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#59     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#60     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#61     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#62     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#63     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#64     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#65     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#66     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#67     ComponentElement.visitChildren (package:flutter/src/widgets/framework.dart:5532:14)
+#68     Hero._allHeroesFor.visitor (package:flutter/src/widgets/heroes.dart:321:15)
+#69     SingleChildRenderObjectElement.visitChildren (package:flutter/src/widgets/framework.dart:6744:14)
+#70     Element.visitChildElements (package:flutter/src/widgets/framework.dart:3720:5)
+#71     Hero._allHeroesFor (package:flutter/src/widgets/heroes.dart:324:13)
+#72     HeroController._startHeroTransition (package:flutter/src/widgets/heroes.dart:955:14)
+#73     HeroController._maybeStartHeroTransition.<anonymous closure> (package:flutter/src/widgets/heroes.dart:914:9)
+#74     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1386:15)
+#75     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1322:11)
+#76     SchedulerBinding._handleDrawFrame (package:flutter/src/scheduler/binding.dart:1169:5)
+#77     _invoke (dart:ui/hooks.dart:312:13)
+#78     PlatformDispatcher._drawFrame (dart:ui/platform_dispatcher.dart:399:5)
+#79     _drawFrame (dart:ui/hooks.dart:283:31)
+====================================================================================================
+2024-05-30 17:27:55.144 ergpm_diagnostics[7851:5962101] [FBP-iOS] didConnectPeripheral
+2024-05-30 17:27:58.838 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: discoverServices
+2024-05-30 17:27:58.839 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverServices:
+2024-05-30 17:27:58.839 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060020-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:58.839 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060010-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:58.839 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060030-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:58.839 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: 1826
+2024-05-30 17:27:59.013 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverCharacteristicsForService:
+2024-05-30 17:27:59.013 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060020-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.013 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060022-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.014 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverCharacteristicsForService:
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060010-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060012-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060013-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060014-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060015-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060011-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060016-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060017-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.194 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060018-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverCharacteristicsForService:
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: ce060030-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060031-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060032-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060033-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060034-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060035-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060036-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060037-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060038-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060039-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce06003a-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce06003b-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce060080-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.554 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:27:59.916 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverCharacteristicsForService:
+2024-05-30 17:27:59.916 ergpm_diagnostics[7851:5962101] [FBP-iOS]   svc: 1826
+2024-05-30 17:27:59.916 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: 2acc
+2024-05-30 17:27:59.916 ergpm_diagnostics[7851:5962101] [FBP-iOS]     chr: 2ad1
+2024-05-30 17:28:00.092 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060012-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060013-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060014-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060015-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060011-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060016-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060017-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.093 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060018-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.273 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.273 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060031-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.273 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:00.453 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.453 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060032-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.453 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:00.633 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.633 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060033-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.633 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:00.633 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.633 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060034-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.816 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.816 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.816 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:00.992 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:00.992 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060036-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:00.992 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:01.174 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:01.174 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060037-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:01.174 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:01.354 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:01.354 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060038-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:01.354 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:01.534 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:01.534 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060039-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:01.534 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:01.713 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:01.713 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce06003a-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:01.713 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:01.893 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:01.893 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce06003b-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:01.893 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:02.072 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:02.073 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060080-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:02.073 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:02.252 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:02.252 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:02.252 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+2024-05-30 17:28:02.252 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:02.252 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: 2acc
+2024-05-30 17:28:02.612 ergpm_diagnostics[7851:5962101] [FBP-iOS] didDiscoverDescriptorsForCharacteristic:
+2024-05-30 17:28:02.612 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: 2ad1
+2024-05-30 17:28:02.612 ergpm_diagnostics[7851:5962101] [FBP-iOS]     desc: 2902
+flutter: [FBP] stopScan: already stopped
+2024-05-30 17:28:09.062 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:09.182 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:09.182 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:09.184 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:09.363 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:09.363 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:09.364 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:09.544 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:09.544 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:09.548 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:09.723 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:09.723 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:09.728 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:09.905 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:09.905 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:09.908 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-05-30 17:28:10.083 ergpm_diagnostics[7851:5962101] [FBP-iOS] didWriteValueForCharacteristic:
+2024-05-30 17:28:10.083 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:13.149 ergpm_diagnostics[7851:5962101] [FBP-iOS] handleMethodCall: setNotifyValue
+2024-05-30 17:28:13.322 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateNotificationStateForCharacteristic:
+2024-05-30 17:28:13.322 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+2024-05-30 17:28:36.094 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:36.095 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 5f00002100007651000013014706990400000100
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.18,"driveTime":810,"strokeRecoveryTime":0,"strokeDistance":1342177.28,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":1}
+2024-05-30 17:28:37.444 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:37.444 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: e8000055000076517c0013014706990400000100
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.18,"driveTime":810,"strokeRecoveryTime":1240,"strokeDistance":1342177.28,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":1}
+2024-05-30 17:28:38.253 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:38.254 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 39010078000082497c005a036207bf04af0e0200
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":730,"strokeRecoveryTime":1240,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":2}
+2024-05-30 17:28:39.872 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:39.872 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: d90100bb0000824996005a036207bf04af0e0200
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":730,"strokeRecoveryTime":1500,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":2}
+2024-05-30 17:28:40.593 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:40.593 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 220200dd000082419600f0037c07e1047a140300
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":650,"strokeRecoveryTime":1500,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":3}
+2024-05-30 17:28:42.214 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:42.214 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: c7020024010082419a00f0037c07e1047a140300
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":650,"strokeRecoveryTime":1540,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":3}
+2024-05-30 17:28:42.934 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:42.934 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 0f030047010085419a002a040b082d0570170400
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":650,"strokeRecoveryTime":1540,"strokeDistance":45035996273704.96,"peakDriveForce":419430.4,"averageDriveForce":4503599627370496.0,"workPerStroke":0.0,"strokeCount":4}
+2024-05-30 17:28:44.733 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:44.733 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: c203009701008541a5002a040b082d0570170400
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":650,"strokeRecoveryTime":1650,"strokeDistance":45035996273704.96,"peakDriveForce":419430.4,"averageDriveForce":4503599627370496.0,"workPerStroke":0.0,"strokeCount":4}
+2024-05-30 17:28:45.453 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:45.453 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 0a0400ba01008540a500780466082b05191a0500
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":640,"strokeRecoveryTime":1650,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":1125899906842624.0,"workPerStroke":22333829939.2,"strokeCount":5}
+2024-05-30 17:28:47.254 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:47.254 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: bb04000802008540a400780466082b05191a0500
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":640,"strokeRecoveryTime":1640,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":1125899906842624.0,"workPerStroke":22333829939.2,"strokeCount":5}
+2024-05-30 17:28:47.974 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:47.974 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 0505002c02008842a4007804f007fc04281a0600
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.36,"driveTime":660,"strokeRecoveryTime":1640,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":731834939447705.6,"strokeCount":6}
+2024-05-30 17:28:49.684 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:49.684 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: b0050079020088429e007804f007fc04281a0600
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.36,"driveTime":660,"strokeRecoveryTime":1580,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":731834939447705.6,"strokeCount":6}
+2024-05-30 17:28:50.404 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:50.404 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: f805009c020085409e005a042f08160580190700
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":640,"strokeRecoveryTime":1580,"strokeDistance":0.0,"peakDriveForce":28823037615171176.0,"averageDriveForce":536870912.0,"workPerStroke":0.0,"strokeCount":7}
+2024-05-30 17:28:52.203 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:52.203 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: af0600ed02008540ab005a042f08160580190700
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.33,"driveTime":640,"strokeRecoveryTime":1710,"strokeDistance":0.0,"peakDriveForce":28823037615171176.0,"averageDriveForce":536870912.0,"workPerStroke":0.0,"strokeCount":7}
+2024-05-30 17:28:52.924 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:52.924 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: fb06001103008843ab009004ee07eb04631a0800
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.36,"driveTime":670,"strokeRecoveryTime":1710,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":8}
+2024-05-30 17:28:54.723 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:54.723 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: ac07005f03008843a7009004ee07eb04631a0800
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.36,"driveTime":670,"strokeRecoveryTime":1670,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":8}
+2024-05-30 17:28:55.443 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:55.443 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: f507008203008240a7006804d807d5041e190900
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":640,"strokeRecoveryTime":1670,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":687194767360.0,"strokeCount":9}
+2024-05-30 17:28:57.155 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:28:57.155 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: a10800cd03008240a0006804d807d5041e190900
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":1.3,"driveTime":640,"strokeRecoveryTime":1600,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":687194767360.0,"strokeCount":9}
+2024-05-30 17:29:12.904 ergpm_diagnostics[7851:5962101] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-05-30 17:29:12.904 ergpm_diagnostics[7851:5962101] [FBP-iOS]   chr: ce060035-43e5-11e4-916c-0800200c9a66
+flutter: 0000000000000000000000000000000000000000
+ -> {"elapsedTime":0,"distance":0.0,"driveLength":0.0,"driveTime":0,"strokeRecoveryTime":0,"strokeDistance":0.0,"peakDriveForce":0.0,"averageDriveForce":0.0,"workPerStroke":0.0,"strokeCount":0}
