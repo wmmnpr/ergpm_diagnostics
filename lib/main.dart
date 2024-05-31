@@ -104,7 +104,8 @@ class _HomeScreenState extends State<HomeScreen> {
   late BluetoothDevice activeDevice;
 
   late BluetoothCharacteristic _notificationEnablerCharacteristic;
-  late BluetoothCharacteristic _bluetoothCharacteristic;
+  late BluetoothCharacteristic _bluetoothWriteCharacteristic;
+  late BluetoothCharacteristic _bluetoothReadCharacteristic;
   late BluetoothCharacteristic _workoutProgressCharacteristic;
   late BluetoothCharacteristic _strokeDataCharacteristic;
 
@@ -149,8 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
         // 2. you must always re-discover services after disconnection!
         _outputTextController.text += activeDevice.connectionState.toString();
 
-        Guid guid2902 = Guid("ce060022-43e5-11e4-916c-0800200c9a66");
         Guid guid21 = Guid("ce060021-43e5-11e4-916c-0800200c9a66");
+        Guid guid22 = Guid("ce060022-43e5-11e4-916c-0800200c9a66");
         Guid guid32 = Guid("ce060032-43e5-11e4-916c-0800200c9a66");
         Guid guid35 = Guid("ce060035-43e5-11e4-916c-0800200c9a66");
 
@@ -160,18 +161,19 @@ class _HomeScreenState extends State<HomeScreen> {
           for (BluetoothService service in bluetoothServiceList) {
             for (BluetoothCharacteristic characteristic
                 in service.characteristics) {
+              //print("service: ${service.uuid} <==> ${characteristic.uuid}");
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
-                _bluetoothCharacteristic = characteristic;
+                _bluetoothWriteCharacteristic = characteristic;
               } else if (characteristic.characteristicUuid == guid32) {
                 _outputTextController.text += "found guid32\n";
                 _workoutProgressCharacteristic = characteristic;
               } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
                 _strokeDataCharacteristic = characteristic;
-              } else if (characteristic.characteristicUuid == guid2902) {
-                _outputTextController.text += "found guid2902\n";
-                _notificationEnablerCharacteristic = characteristic;
+              } else if (characteristic.characteristicUuid == guid22) {
+                _outputTextController.text += "found guid22\n";
+                _bluetoothReadCharacteristic = characteristic;
               }
             }
           }
@@ -201,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
     payload.add(checksum);
     payload.add(0xF2);
 
-    return _bluetoothCharacteristic.write(payload);
+    return _bluetoothWriteCharacteristic.write(payload);
   }
 
   void _handleSetupWorkout() {
@@ -265,6 +267,17 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void _handleReadCharacteristic() {
+    _bluetoothReadCharacteristic.setNotifyValue(true);
+    _outputTextController.text += 'clicked _handleReadCharacteristic\n';
+    sendCommand([0xa1], "CSAFE_GETHORIZONTAL_CMD").then((v1) {
+      _bluetoothReadCharacteristic.onValueReceived.listen((v2) {
+        _outputTextController.text +=
+            "Horizontal: ${DataConvUtils.getUint16(v2, 0)}\n";
+      });
+    });
+  }
+
   void _handleDisconnect() {
     _outputTextController.text += 'clicked _handleDisconnect\n';
   }
@@ -309,11 +322,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => _subscribeNotifications()),
           ),
           ListTile(
-            title: const Text("Start notification"),
+            title: const Text("Read 0x0022 char"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
-                onPressed: () => _handleSelectDevice(context)),
+                onPressed: () => _handleReadCharacteristic()),
           ),
           ListTile(
             title: const Text("Disconnect"),
