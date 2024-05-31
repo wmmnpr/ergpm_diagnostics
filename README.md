@@ -26,3 +26,62 @@ BluetoothService{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce
 BluetoothService{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, isPrimary: true, characteristics: [BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060031-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060031-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060032-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060032-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060033-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060033-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060034-43e5-11e4-916c-0800200c9a66, descriptors: [], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: true, notify: false, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060035-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060035-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060036-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060036-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060037-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060037-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060038-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060038-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060039-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060039-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce06003a-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce06003a-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce06003b-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce06003b-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce060080-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce060080-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, secondaryServiceUuid: null, characteristicUuid: ce06003d-43e5-11e4-916c-0800200c9a66, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: ce060030-43e5-11e4-916c-0800200c9a66, characteristicUuid: ce06003d-43e5-11e4-916c-0800200c9a66, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}], includedServices: []}
 BluetoothService{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: 1826, isPrimary: true, characteristics: [BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: 1826, secondaryServiceUuid: null, characteristicUuid: 2acc, descriptors: [], properties: CharacteristicProperties{broadcast: false, read: true, writeWithoutResponse: false, write: false, notify: false, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}, BluetoothCharacteristic{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: 1826, secondaryServiceUuid: null, characteristicUuid: 2ad1, descriptors: [BluetoothDescriptor{remoteId: 40BD468A-6C6B-35C1-1896-831F32320BF4, serviceUuid: 1826, characteristicUuid: 2ad1, descriptorUuid: 2902, lastValue: []}], properties: CharacteristicProperties{broadcast: false, read: false, writeWithoutResponse: false, write: false, notify: true, indicate: false, authenticatedSignedWrites: false, extendedProperties: false, notifyEncryptionRequired: false, indicateEncryptionRequired: false}, value: []}], includedServices: []}
 
+Instance of '_BroadcastStream<BluetoothConnectionState>'found guid22
+found guid21
+found guid32
+found guid35
+clicked _handleReadCharacteristic
+send get horizotal
+Horizontal: f181a10300002407f2
+send get horizotal
+Horizontal: f101a10300002487f2
+send get horizotal
+Horizontal: f181a10300002407f2
+send get horizotal
+Horizontal: f101a10300002487f2
+clicked _handleSetupWorkout
+Horizontal: f11111f2
+Horizontal: f18181f2
+Horizontal: f10101f2
+Horizontal: f1811a009bf2
+Horizontal: f10101f2
+Horizontal: f18585f2
+send get horizotal
+Horizontal: f105a10300002483f2
+send get horizotal
+Horizontal: f185a10316002415f2
+send get horizotal
+Horizontal: f105a1031900249af2
+
+
+f1 
+05 a1 03 19 00 24 => 9a
+f2
+
+
+
+
+f107a103640024e5f2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

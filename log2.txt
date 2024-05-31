@@ -1,0 +1,611 @@
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:41.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:41.236 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:41.236 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:41.328 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:41.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:42.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:42.227 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:42.227 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:42.316 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:42.316 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:43.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:43.216 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:43.216 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:43.307 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:43.307 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:44.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:44.206 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:44.206 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:44.296 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:44.296 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:45.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:45.198 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:45.198 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:45.199 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:45.199 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:46.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:46.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:46.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:46.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:46.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:47.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:47.177 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:47.177 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:47.179 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:47.179 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:48.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:48.259 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:48.259 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:48.260 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:48.260 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:49.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:49.247 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:49.247 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:49.337 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:49.337 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:50.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:50.328 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:50.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:50.328 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:50.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:51.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:51.227 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:51.227 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:51.318 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:51.318 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:52.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:52.217 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:52.217 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:52.308 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:52.308 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:53.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:53.208 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:53.208 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:53.208 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:53.208 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10300002403f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:54.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:54.198 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:54.198 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:54.200 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:54.200 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10300002483f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:55.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:55.187 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:55.187 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:55.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:55.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10301002402f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:56.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:56.267 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:56.267 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:56.268 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:56.268 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10304002487f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:57.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:57.258 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:57.258 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:57.259 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:57.259 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10307002404f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:58.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:58.247 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:58.247 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:34:58.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:58.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a1030b002488f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:34:59.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:34:59.238 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:34:59.238 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:34:59.327 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:34:59.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a1030f00240cf2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:00.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:00.228 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:00.228 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:00.229 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:00.229 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a10312002491f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:01.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:01.218 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:01.218 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:01.219 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:01.219 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10316002415f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:02.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:02.207 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:02.207 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:02.297 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:02.297 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a1031a002499f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:03.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:03.199 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:03.199 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:03.288 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:03.288 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a1031e00241df2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:04.084 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:04.190 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:04.190 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:04.278 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:04.279 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a103220024a1f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:05.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:05.178 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:05.178 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:05.178 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:05.178 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10326002425f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:06.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:06.257 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:06.258 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:06.259 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:06.259 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a1032a0024a9f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:07.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:07.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:07.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:07.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:07.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a1032e00242df2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:08.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:08.240 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:08.240 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:08.327 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:08.327 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a103330024b0f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:09.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:09.228 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:09.228 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:09.319 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:09.319 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10336002435f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:10.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:10.218 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:10.218 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:10.396 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:10.396 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a1033a0024b9f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:11.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:11.208 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:11.208 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:11.298 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:11.298 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a1033f00243cf2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:12.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:12.198 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:12.198 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:12.288 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:12.288 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a103420024c1f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:13.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:13.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:13.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:13.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:13.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a10346002445f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:14.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:14.268 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:14.268 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:14.270 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:14.270 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a1034b0024c8f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:15.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:15.260 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:15.260 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:15.260 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:15.260 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f185a1034e00244df2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:16.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:16.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:16.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:16.249 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:16.249 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f105a103530024d0f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:17.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:17.238 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:17.238 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:17.328 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:17.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10357002454f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:18.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:18.227 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:18.227 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:18.317 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:18.317 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a1035b0024d8f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:19.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:19.218 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:19.218 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:19.308 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:19.308 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a1035f00245cf2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:20.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:20.208 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:20.208 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:20.297 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:20.297 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f105a103630024e0f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:21.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:21.198 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:21.198 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:21.200 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:21.200 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f185a10364002467f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:22.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:22.189 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:22.189 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:22.189 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:22.189 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:23.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:23.268 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:23.268 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:23.268 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:23.268 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:24.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:24.259 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:24.259 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:24.261 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:24.261 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:25.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:25.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:25.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:25.248 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:25.248 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:26.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:26.238 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:26.238 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:26.328 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:26.328 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:27.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:27.228 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:27.228 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:27.318 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:27.318 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:28.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:28.218 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:28.218 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:28.308 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:28.308 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:29.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:29.210 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:29.210 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:29.298 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:29.298 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:30.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:30.198 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:30.198 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:30.199 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:30.199 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:31.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:31.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:31.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:31.188 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:31.188 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:32.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:32.178 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:32.178 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:32.179 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:32.179 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:33.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:33.257 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:33.257 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:33.259 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:33.259 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:34.083 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:34.249 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:34.249 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:34.338 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:34.338 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:35.079 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:35.238 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:35.238 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:35.330 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:35.330 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:36.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:36.228 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:36.228 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:36.409 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:36.409 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:37.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:37.217 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:37.217 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:37.307 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:37.307 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:38.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:38.208 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:38.208 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:38.299 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:38.299 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:39.081 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:39.197 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:39.197 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+2024-06-01 00:35:39.287 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:39.287 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: Received:f187a10364002465f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:40.080 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:40.190 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:40.190 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:40.190 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:40.190 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f107a103640024e5f2
+
+flutter: CSAFE_GETHORIZONTAL_CMD
+
+2024-06-01 00:35:41.082 ergpm_diagnostics[1251:8879492] [FBP-iOS] handleMethodCall: writeCharacteristic
+2024-06-01 00:35:41.178 ergpm_diagnostics[1251:8879492] [FBP-iOS] didWriteValueForCharacteristic:
+2024-06-01 00:35:41.178 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060021-43e5-11e4-916c-0800200c9a66
+2024-06-01 00:35:41.179 ergpm_diagnostics[1251:8879492] [FBP-iOS] didUpdateValueForCharacteristic:
+2024-06-01 00:35:41.179 ergpm_diagnostics[1251:8879492] [FBP-iOS]   chr: ce060022-43e5-11e4-916c-0800200c9a66
+flutter: CSAFE_GETHORIZONTAL_CMD OK
+flutter: Received:f187a10364002465f2

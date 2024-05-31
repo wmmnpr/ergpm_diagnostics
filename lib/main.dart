@@ -270,16 +270,23 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleReadCharacteristic() {
     _bluetoothReadCharacteristic.setNotifyValue(true);
     _outputTextController.text += 'clicked _handleReadCharacteristic\n';
-    sendCommand([0xa1], "CSAFE_GETHORIZONTAL_CMD").then((v1) {
-      _bluetoothReadCharacteristic.onValueReceived.listen((v2) {
-        _outputTextController.text +=
-            "Horizontal: ${DataConvUtils.getUint16(v2, 0)}\n";
-      });
+    _bluetoothReadCharacteristic.onValueReceived.listen((v2) {
+      print("Received:${intArrayToHex(v2)}\n");
     });
   }
 
   void _handleDisconnect() {
-    _outputTextController.text += 'clicked _handleDisconnect\n';
+    int ctr = 0;
+    Timer.periodic(const Duration(seconds: 1), (Timer timer)
+    {
+      print('CSAFE_GETHORIZONTAL_CMD\n');
+      sendCommand([0xa1], "CSAFE_GETHORIZONTAL_CMD").then((v1) {
+        print("CSAFE_GETHORIZONTAL_CMD OK");
+      });
+      if(ctr++ > 15){
+        timer.cancel();
+      }
+    });
   }
 
   @override
@@ -329,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => _handleReadCharacteristic()),
           ),
           ListTile(
-            title: const Text("Disconnect"),
+            title: const Text("get horizontal"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
