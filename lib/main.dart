@@ -57,6 +57,60 @@ enum StrokeDataBLEPayload {
   BLE_PAYLOAD_SIZE
 }
 
+
+class AdditionalStatus2 {
+  int elapsedTime = 0;
+  double distance = 0;
+  double driveLength = 0;
+  int driveTime = 0;
+  int strokeRecoveryTime = 0;
+  double strokeDistance = 0;
+  double peakDriveForce = 0;
+  double averageDriveForce = 0;
+  double workPerStroke = 0;
+  int strokeCount = 0;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'elapsedTime': elapsedTime,
+      'distance': distance,
+      'driveLength': driveLength,
+      'driveTime': driveTime,
+      'strokeRecoveryTime': strokeRecoveryTime,
+      'strokeDistance': strokeDistance,
+      'peakDriveForce': peakDriveForce,
+      'averageDriveForce': averageDriveForce,
+      'workPerStroke': workPerStroke,
+      'strokeCount': strokeCount
+    };
+  }
+}
+
+enum AdditionalStatus2DataBLEPayload {
+  ELAPSED_TIME_LO,
+  ELAPSED_TIME_MID,
+  ELAPSED_TIME_HI,
+  DISTANCE_LO,
+  DISTANCE_MID,
+  DISTANCE_HI,
+  DRIVE_LENGTH,
+  DRIVE_TIME,
+  STROKE_RECOVERY_TIME_LO,
+  STROKE_RECOVERY_TIME_HI,
+  STROKE_DISTANCE_LO,
+  STROKE_DISTANCE_HI,
+  PEAK_DRIVE_FORCE_LO,
+  PEAK_DRIVE_FORCE_HI,
+  AVG_DRIVE_FORCE_LO,
+  AVG_DRIVE_FORCE_HI,
+  WORK_PER_STROKE_LO,
+  WORK_PER_STROKE_HI,
+  STROKE_COUNT_LO,
+  STROKE_COUNT_HI,
+  BLE_PAYLOAD_SIZE
+}
+
+
 StrokeData intListToStrokeData(List<int> intList) {
   StrokeData strokeData = StrokeData();
   // @formatter:off
@@ -160,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
             .then((List<BluetoothService> bluetoothServiceList) {
           for (BluetoothService service in bluetoothServiceList) {
             for (BluetoothCharacteristic characteristic
-                in service.characteristics) {
+            in service.characteristics) {
               //print("service: ${service.uuid} <==> ${characteristic.uuid}");
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
@@ -182,6 +236,29 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     ////////////
   }
+
+  List<int> hexStringToIntArray(String hex) {
+    // Ensure the string length is even
+    if (hex.length % 2 != 0) {
+      throw FormatException('Hex string must have an even length');
+    }
+
+    // Initialize an empty list to store the integers
+    List<int> intArray = [];
+
+    // Loop through the hex string, taking 2 characters at a time
+    for (int i = 0; i < hex.length; i += 2) {
+      // Get the hex substring (2 characters)
+      String hexPair = hex.substring(i, i + 2);
+
+      // Convert the hex pair to an integer and add to the list
+      int value = int.parse(hexPair, radix: 16);
+      intArray.add(value);
+    }
+
+    return intArray;
+  }
+
 
   Future<void> sendCommand(List<int> payload, String name) async {
     List<int> buffer = List<int>.empty(growable: true);
@@ -209,32 +286,37 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleSetupWorkout() {
     _outputTextController.text += 'clicked _handleSetupWorkout\n';
     int distance = 1;
-    sendCommand([0x86], "GOFINISHED").then((v) => {
-          sendCommand([0x87], "GOREADY").then((v) => {
-                sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
-                    .then((v) => {
-                          sendCommand([
-                            0x1A,
-                            0x07,
-                            0x05,
-                            0x05,
-                            0x80,
-                            0x64,
-                            0x00,
-                            0x00,
-                            0x00
-                          ], "SETUSERCFG1")
-                              .then((v) => {
-                                    sendCommand([0x24, 0x02, 0x00, 0x00],
-                                            "SETPROGRAM")
-                                        .then((v) => {
-                                              sendCommand([0x85], "GOINUSE")
-                                                  .then((v) => {})
-                                            })
-                                  })
-                        })
-              })
-        });
+    sendCommand([0x86], "GOFINISHED").then((v) =>
+    {
+      sendCommand([0x87], "GOREADY").then((v) =>
+      {
+        sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
+            .then((v) =>
+        {
+          sendCommand([
+            0x1A,
+            0x07,
+            0x05,
+            0x05,
+            0x80,
+            0x64,
+            0x00,
+            0x00,
+            0x00
+          ], "SETUSERCFG1")
+              .then((v) =>
+          {
+            sendCommand([0x24, 0x02, 0x00, 0x00],
+                "SETPROGRAM")
+                .then((v) =>
+            {
+              sendCommand([0x85], "GOINUSE")
+                  .then((v) => {})
+            })
+          })
+        })
+      })
+    });
   }
 
   String intArrayToHex(List<int> intArray) {
@@ -277,15 +359,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _handleDisconnect() {
     int ctr = 0;
-    Timer.periodic(const Duration(seconds: 1), (Timer timer)
-    {
+    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       print('CSAFE_GETHORIZONTAL_CMD\n');
       sendCommand([0xa1], "CSAFE_GETHORIZONTAL_CMD").then((v1) {
         print("CSAFE_GETHORIZONTAL_CMD OK");
       });
-      if(ctr++ > 15){
+      if (ctr++ > 70) {
         timer.cancel();
       }
+    });
+  }
+
+  void _sendCommandOnPush() {
+    String payload = _outputTextController.value.text;
+    var arrPayload = hexStringToIntArray(payload);
+    _bluetoothWriteCharacteristic.write(arrPayload).then((value) {}
+        , onError: (err, stack)  {
+        print(err);
     });
   }
 
@@ -341,15 +431,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
                 onPressed: () => _handleDisconnect()),
+          ), ListTile(
+            title: const Text("Send Command"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Increase volume by 10',
+                onPressed: () => _sendCommandOnPush()),
+
           ),
           TextField(
             controller: _outputTextController,
-            readOnly: true,
+            readOnly: false,
             maxLines: 10, // Allows multiline input
             decoration: const InputDecoration(
               labelText: 'Output window',
               border: OutlineInputBorder(),
             ),
+
           )
         ],
       ),
