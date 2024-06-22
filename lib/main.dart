@@ -1,146 +1,34 @@
 import 'dart:async';
-import 'dart:convert';
 
+import 'package:ergc2_pm_csafe/ergc2_pm_csafe.dart';
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
-class StrokeData {
-  int elapsedTime = 0;
-  double distance = 0;
-  double driveLength = 0;
-  int driveTime = 0;
-  int strokeRecoveryTime = 0;
-  double strokeDistance = 0;
-  double peakDriveForce = 0;
-  double averageDriveForce = 0;
-  double workPerStroke = 0;
-  int strokeCount = 0;
+abstract class DeviceCharacteristic<T> extends PmBleCharacteristic<T> {
+  BluetoothCharacteristic bluetoothCharacteristic;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'elapsedTime': elapsedTime,
-      'distance': distance,
-      'driveLength': driveLength,
-      'driveTime': driveTime,
-      'strokeRecoveryTime': strokeRecoveryTime,
-      'strokeDistance': strokeDistance,
-      'peakDriveForce': peakDriveForce,
-      'averageDriveForce': averageDriveForce,
-      'workPerStroke': workPerStroke,
-      'strokeCount': strokeCount
-    };
+  DeviceCharacteristic(this.bluetoothCharacteristic);
+
+  @override
+  void listen(StreamSink sink) {
+    bluetoothCharacteristic.setNotifyValue(true);
+    bluetoothCharacteristic.onValueReceived.listen((data) {
+      sink.add(data);
+    }, onError: (error, stackTrace) {
+      sink.addError(error);
+    }, onDone: () {
+      sink.close();
+    });
   }
 }
 
-enum StrokeDataBLEPayload {
-  ELAPSED_TIME_LO,
-  ELAPSED_TIME_MID,
-  ELAPSED_TIME_HI,
-  DISTANCE_LO,
-  DISTANCE_MID,
-  DISTANCE_HI,
-  DRIVE_LENGTH,
-  DRIVE_TIME,
-  STROKE_RECOVERY_TIME_LO,
-  STROKE_RECOVERY_TIME_HI,
-  STROKE_DISTANCE_LO,
-  STROKE_DISTANCE_HI,
-  PEAK_DRIVE_FORCE_LO,
-  PEAK_DRIVE_FORCE_HI,
-  AVG_DRIVE_FORCE_LO,
-  AVG_DRIVE_FORCE_HI,
-  WORK_PER_STROKE_LO,
-  WORK_PER_STROKE_HI,
-  STROKE_COUNT_LO,
-  STROKE_COUNT_HI,
-  BLE_PAYLOAD_SIZE
-}
+class StrokeDataCharacteristic extends DeviceCharacteristic<StrokeData> {
+  StrokeDataCharacteristic(super.characteristic);
 
-
-class AdditionalStatus2 {
-  int elapsedTime = 0;
-  double distance = 0;
-  double driveLength = 0;
-  int driveTime = 0;
-  int strokeRecoveryTime = 0;
-  double strokeDistance = 0;
-  double peakDriveForce = 0;
-  double averageDriveForce = 0;
-  double workPerStroke = 0;
-  int strokeCount = 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'elapsedTime': elapsedTime,
-      'distance': distance,
-      'driveLength': driveLength,
-      'driveTime': driveTime,
-      'strokeRecoveryTime': strokeRecoveryTime,
-      'strokeDistance': strokeDistance,
-      'peakDriveForce': peakDriveForce,
-      'averageDriveForce': averageDriveForce,
-      'workPerStroke': workPerStroke,
-      'strokeCount': strokeCount
-    };
-  }
-}
-
-enum AdditionalStatus2DataBLEPayload {
-  ELAPSED_TIME_LO,
-  ELAPSED_TIME_MID,
-  ELAPSED_TIME_HI,
-  DISTANCE_LO,
-  DISTANCE_MID,
-  DISTANCE_HI,
-  DRIVE_LENGTH,
-  DRIVE_TIME,
-  STROKE_RECOVERY_TIME_LO,
-  STROKE_RECOVERY_TIME_HI,
-  STROKE_DISTANCE_LO,
-  STROKE_DISTANCE_HI,
-  PEAK_DRIVE_FORCE_LO,
-  PEAK_DRIVE_FORCE_HI,
-  AVG_DRIVE_FORCE_LO,
-  AVG_DRIVE_FORCE_HI,
-  WORK_PER_STROKE_LO,
-  WORK_PER_STROKE_HI,
-  STROKE_COUNT_LO,
-  STROKE_COUNT_HI,
-  BLE_PAYLOAD_SIZE
-}
-
-
-StrokeData intListToStrokeData(List<int> intList) {
-  StrokeData strokeData = StrokeData();
-  // @formatter:off
-  strokeData.elapsedTime = DataConvUtils.getUint24(intList, StrokeDataBLEPayload.ELAPSED_TIME_LO.index) * 10;
-  strokeData.distance = DataConvUtils.getUint24(intList, StrokeDataBLEPayload.DISTANCE_LO.index) / 10;
-  strokeData.driveLength = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.DRIVE_LENGTH.index) / 100;
-  strokeData.driveTime = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.DRIVE_TIME.index) * 10;
-  strokeData.strokeRecoveryTime = (DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_RECOVERY_TIME_LO.index)
-                                      + DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_RECOVERY_TIME_HI.index) * 256) * 10;
-  strokeData.strokeDistance = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.STROKE_DISTANCE_LO.index) / 100;
-  strokeData.peakDriveForce = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.PEAK_DRIVE_FORCE_LO.index) / 10;
-  strokeData.averageDriveForce = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.AVG_DRIVE_FORCE_LO.index) / 10;
-  strokeData.workPerStroke = DataConvUtils.getUint16(intList, StrokeDataBLEPayload.WORK_PER_STROKE_LO.index) / 10;
-  strokeData.strokeCount = DataConvUtils.getUint8(intList, StrokeDataBLEPayload.STROKE_COUNT_LO.index)
-                                      + DataConvUtils.getUint8(intList,  StrokeDataBLEPayload.STROKE_COUNT_HI.index) * 256;
-  // @formatter:on
-  return strokeData;
-}
-
-class DataConvUtils {
-  static int getUint8(List<int> data, int offset) {
-    return data[offset];
-  }
-
-  static int getUint16(List<int> data, int offset) {
-    return data[offset + 1] << 8 + data[offset];
-  }
-
-  static int getUint24(List<int> data, int offset) {
-    return (data[offset + 2] << 16) + (data[offset + 1] << 8) + (data[offset]);
+  @override
+  StrokeData create() {
+    return StrokeData();
   }
 }
 
@@ -156,6 +44,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String data = 'Initial Data';
   late BluetoothDevice activeDevice;
+  Map<int, DeviceCharacteristic> characteristics = {};
+  late PmBLEDevice pmBLEDevice;
 
   late BluetoothCharacteristic _notificationEnablerCharacteristic;
   late BluetoothCharacteristic _bluetoothWriteCharacteristic;
@@ -214,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
             .then((List<BluetoothService> bluetoothServiceList) {
           for (BluetoothService service in bluetoothServiceList) {
             for (BluetoothCharacteristic characteristic
-            in service.characteristics) {
+                in service.characteristics) {
               //print("service: ${service.uuid} <==> ${characteristic.uuid}");
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
@@ -225,12 +115,15 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
                 _strokeDataCharacteristic = characteristic;
+                characteristics[0x35] =
+                    StrokeDataCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid22) {
                 _outputTextController.text += "found guid22\n";
                 _bluetoothReadCharacteristic = characteristic;
               }
             }
           }
+          pmBLEDevice = PmBLEDevice(characteristics);
         });
       }
     });
@@ -259,7 +152,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return intArray;
   }
 
-
   Future<void> sendCommand(List<int> payload, String name) async {
     List<int> buffer = List<int>.empty(growable: true);
     int checksum = 0;
@@ -286,37 +178,32 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleSetupWorkout() {
     _outputTextController.text += 'clicked _handleSetupWorkout\n';
     int distance = 1;
-    sendCommand([0x86], "GOFINISHED").then((v) =>
-    {
-      sendCommand([0x87], "GOREADY").then((v) =>
-      {
-        sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
-            .then((v) =>
-        {
-          sendCommand([
-            0x1A,
-            0x07,
-            0x05,
-            0x05,
-            0x80,
-            0x64,
-            0x00,
-            0x00,
-            0x00
-          ], "SETUSERCFG1")
-              .then((v) =>
-          {
-            sendCommand([0x24, 0x02, 0x00, 0x00],
-                "SETPROGRAM")
-                .then((v) =>
-            {
-              sendCommand([0x85], "GOINUSE")
-                  .then((v) => {})
-            })
-          })
-        })
-      })
-    });
+    sendCommand([0x86], "GOFINISHED").then((v) => {
+          sendCommand([0x87], "GOREADY").then((v) => {
+                sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
+                    .then((v) => {
+                          sendCommand([
+                            0x1A,
+                            0x07,
+                            0x05,
+                            0x05,
+                            0x80,
+                            0x64,
+                            0x00,
+                            0x00,
+                            0x00
+                          ], "SETUSERCFG1")
+                              .then((v) => {
+                                    sendCommand([0x24, 0x02, 0x00, 0x00],
+                                            "SETPROGRAM")
+                                        .then((v) => {
+                                              sendCommand([0x85], "GOINUSE")
+                                                  .then((v) => {})
+                                            })
+                                  })
+                        })
+              })
+        });
   }
 
   String intArrayToHex(List<int> intArray) {
@@ -337,15 +224,13 @@ class _HomeScreenState extends State<HomeScreen> {
   void _subscribeNotifications() {
     //_notificationEnablerCharacteristic.write(List.from([0x01,0x00]));
     _outputTextController.text += 'clicked _subscribeNotifications\n';
-    _strokeDataCharacteristic.setNotifyValue(true);
-    _strokeDataCharacteristic.onValueReceived.listen((data) {
-      String hexData = '${intArrayToHex(data)}\n';
-      String strokeData = json.encode(intListToStrokeData(data).toJson());
-      print("$hexData -> $strokeData");
-    }, onError: (error, stackTrace) {
-      _outputTextController.text += "Error $error\n";
+    pmBLEDevice.subscribe<StrokeData>(StrokeData.uuid).listen((strokeData) {
+      String dataStr = strokeData.toJson().toString();
+      print("StrokeData -> $dataStr");
+    }, onError: (error) {
+      print(error);
     }, onDone: () {
-      _outputTextController.text += "listen Done\n";
+      print("StrokeData done.");
     });
   }
 
@@ -373,10 +258,21 @@ class _HomeScreenState extends State<HomeScreen> {
   void _sendCommandOnPush() {
     String payload = _outputTextController.value.text;
     var arrPayload = hexStringToIntArray(payload);
-    _bluetoothWriteCharacteristic.write(arrPayload).then((value) {}
-        , onError: (err, stack)  {
-        print(err);
+    _bluetoothWriteCharacteristic.write(arrPayload).then((value) {},
+        onError: (err, stack) {
+      print(err);
     });
+  }
+
+  void _CheckSumOnPush() {
+    String payloadText = _outputTextController.value.text;
+    List<int> payload = hexStringToIntArray(payloadText.replaceAll(":", ""));
+    int checksum = 0;
+    for (int i = 0; i < payload.length; i++) {
+      checksum ^= payload[i];
+    }
+    _outputTextController.text +=
+        "checksum=" + checksum.toRadixString(16).padLeft(2, '0');
   }
 
   @override
@@ -431,13 +327,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
                 onPressed: () => _handleDisconnect()),
-          ), ListTile(
+          ),
+          ListTile(
             title: const Text("Send Command"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
                 onPressed: () => _sendCommandOnPush()),
-
+          ),
+          ListTile(
+            title: const Text("Check Sum"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Check sum on push',
+                onPressed: () => _CheckSumOnPush()),
           ),
           TextField(
             controller: _outputTextController,
@@ -447,7 +350,6 @@ class _HomeScreenState extends State<HomeScreen> {
               labelText: 'Output window',
               border: OutlineInputBorder(),
             ),
-
           )
         ],
       ),
