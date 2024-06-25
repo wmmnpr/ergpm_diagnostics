@@ -41,6 +41,7 @@ dependencies:
   ergc2_pm_csafe:
     path: ../ergc2_pm_csafe
   hex: ^0.2.0
+  logging: ^1.2.0
 
 dev_dependencies:
   flutter_test:

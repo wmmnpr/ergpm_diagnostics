@@ -5,8 +5,17 @@ import 'package:ergpm_diagnostics/pm_ble_characteristic.dart';
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:logging/logging.dart';
 
 void main() {
+  Logger.root.level = Level.ALL; // defaults to Level.INFO
+  Logger.root.onRecord.listen((record) {
+    print('${record.level.name}: ${record.time}: ${record.message}');
+  });
+
+  final log = Logger('main');
+  log.info("---------- startring ergpm_diagnostics ---------");
+
   runApp(MaterialApp(home: HomeScreen()));
 }
 
@@ -16,6 +25,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  final log = Logger('_HomeScreenState');
+
   String data = 'Initial Data';
   late BluetoothDevice activeDevice;
   Map<int, DeviceCharacteristic> characteristics = {};
@@ -91,10 +103,10 @@ class _HomeScreenState extends State<HomeScreen> {
             .discoverServices()
             .then((List<BluetoothService> bluetoothServiceList) {
           for (BluetoothService service in bluetoothServiceList) {
-            print("------>service: ${service.uuid}");
+            log.info("------>service: ${service.uuid}");
             for (BluetoothCharacteristic characteristic
                 in service.characteristics) {
-              //print("service: ${service.uuid} <==> ${characteristic.uuid}");
+              //log.info("service: ${service.uuid} <==> ${characteristic.uuid}");
               uuidList.add(characteristic.uuid.str);
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
@@ -176,11 +188,11 @@ class _HomeScreenState extends State<HomeScreen> {
     _outputTextController.text += 'clicked _subscribeNotifications\n';
     pmBLEDevice.subscribe<StrokeData>(StrokeData.uuid).listen((strokeData) {
       String dataStr = strokeData.toJson().toString();
-      print("StrokeData -> $dataStr");
+      log.info("StrokeData -> $dataStr");
     }, onError: (error) {
-      print(error);
+      log.info(error);
     }, onDone: () {
-      print("StrokeData done.");
+      log.info("StrokeData done.");
     });
   }
 
@@ -190,10 +202,10 @@ class _HomeScreenState extends State<HomeScreen> {
         .readCharacteristic(dropdownUuidReadValue.hashCode)
         .then((value) {
       _outputTextController.text += "${DataConvUtils.intArrayToHex(value)}\n";
-      print("Received:${String.fromCharCodes(value)}\n");
+      log.info("Received:${String.fromCharCodes(value)}\n");
     }).onError((error, stackTrace) {
       _outputTextController.text += "$error\n";
-      print("Error read: $error");
+      log.info("Error read: $error");
     });
   }
 
@@ -203,11 +215,11 @@ class _HomeScreenState extends State<HomeScreen> {
     pmBLEDevice.subscribe<CsafeBuffer>(dropdownUuidReadValue.hashCode).listen(
         (csafeBuffer) {
       String dataStr = csafeBuffer.toJson().toString();
-      print("Csafe buffer -> $dataStr");
+      log.info("Csafe buffer -> $dataStr");
     }, onError: (error) {
-      print(error);
+      log.info(error);
     }, onDone: () {
-      print("Csafe done.");
+      log.info("Csafe done.");
     });
   }
 
@@ -216,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var arrPayload = DataConvUtils.hexStringToIntArray(payload);
     pmBLEDevice
         .sendCommand(dropdownUuidWriteValue.hashCode, arrPayload, "ANY")
-        .whenComplete(() => print("done sending any coommand"));
+        .whenComplete(() => log.info("done sending any coommand"));
   }
 
   void _CheckSumOnPush() {
@@ -242,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: const Text("Select Device"),
+            title: const Text("Select Device (Step 1)"),
             trailing: IconButton(
               icon: const Icon(Icons.start),
               tooltip: 'Select Device',
@@ -250,49 +262,49 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           ListTile(
-            title: const Text("Connect"),
+            title: const Text("Connect (Step 2)"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Connect',
                 onPressed: () => _handleConnect()),
           ),
           ListTile(
-            title: const Text("Setup Workout"),
+            title: const Text("Setup Workout - hard coded"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Setup workout',
                 onPressed: () => _handleSetupWorkout()),
           ),
           ListTile(
-            title: const Text("Subscribe"),
+            title: const Text("Subscribe StrokeData Characteristic"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Subscribe Notification',
                 onPressed: () => _subscribeNotifications()),
           ),
           ListTile(
-            title: const Text("Read selected characteristic"),
+            title: const Text("Read selected 'Read Characteristic'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Read characteristic0x0022',
                 onPressed: () => _handleReadCharacteristic()),
           ),
           ListTile(
-            title: const Text("Subscribe selected"),
+            title: const Text("Subscribe to selected 'Read Characteristic'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
                 onPressed: () => _handleSubscribeSelected()),
           ),
           ListTile(
-            title: const Text("Send command in box"),
+            title: const Text("Send command 'Input/Output Window' to selected 'Write Characteristic'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Increase volume by 10',
+                tooltip: 'Send command',
                 onPressed: () => _sendCommandOnPush()),
           ),
           ListTile(
-            title: const Text("Check Sum"),
+            title: const Text("Checksum in 'Input/Output Window'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Check sum on push',
@@ -355,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen> {
             readOnly: false,
             maxLines: 10, // Allows multiline input
             decoration: const InputDecoration(
-              labelText: 'Output window',
+              labelText: 'Input/Output Window',
               border: OutlineInputBorder(),
             ),
           )
