@@ -1,36 +1,10 @@
 import 'dart:async';
 
 import 'package:ergc2_pm_csafe/ergc2_pm_csafe.dart';
+import 'package:ergpm_diagnostics/pm_ble_characteristic.dart';
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
-
-abstract class DeviceCharacteristic<T> extends PmBleCharacteristic<T> {
-  BluetoothCharacteristic bluetoothCharacteristic;
-
-  DeviceCharacteristic(this.bluetoothCharacteristic);
-
-  @override
-  void listen(StreamSink sink) {
-    bluetoothCharacteristic.setNotifyValue(true);
-    bluetoothCharacteristic.onValueReceived.listen((data) {
-      sink.add(data);
-    }, onError: (error, stackTrace) {
-      sink.addError(error);
-    }, onDone: () {
-      sink.close();
-    });
-  }
-}
-
-class StrokeDataCharacteristic extends DeviceCharacteristic<StrokeData> {
-  StrokeDataCharacteristic(super.characteristic);
-
-  @override
-  StrokeData create() {
-    return StrokeData();
-  }
-}
 
 void main() {
   runApp(MaterialApp(home: HomeScreen()));
@@ -46,16 +20,20 @@ class _HomeScreenState extends State<HomeScreen> {
   late BluetoothDevice activeDevice;
   Map<int, DeviceCharacteristic> characteristics = {};
   late PmBLEDevice pmBLEDevice;
+  late List<String> dropdownUuidRead = <String>["empty"];
+  late String dropdownUuidReadValue;
+  late List<String> dropdownUuidWrite = <String>["empty"];
+  late String dropdownUuidWriteValue;
 
   late BluetoothCharacteristic _notificationEnablerCharacteristic;
-  late BluetoothCharacteristic _bluetoothWriteCharacteristic;
   late BluetoothCharacteristic _bluetoothReadCharacteristic;
   late BluetoothCharacteristic _workoutProgressCharacteristic;
-  late BluetoothCharacteristic _strokeDataCharacteristic;
 
   @override
   void initState() {
     super.initState();
+    dropdownUuidReadValue = dropdownUuidRead.first;
+    dropdownUuidWriteValue = dropdownUuidWrite.first;
     // Do any initial setup here
   }
 
@@ -66,6 +44,15 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final TextEditingController _outputTextController = TextEditingController();
+
+  void _updateDropdownItems(List<String> items) {
+    setState(() {
+      dropdownUuidRead = items;
+      dropdownUuidReadValue = dropdownUuidRead.first;
+      dropdownUuidWrite = items;
+      dropdownUuidWriteValue = dropdownUuidWrite.first;
+    });
+  }
 
   Future<void> _handleSelectDevice(BuildContext context) async {
     _outputTextController.text += 'clicked _handleSelectDevice\n';
@@ -99,30 +86,38 @@ class _HomeScreenState extends State<HomeScreen> {
         Guid guid32 = Guid("ce060032-43e5-11e4-916c-0800200c9a66");
         Guid guid35 = Guid("ce060035-43e5-11e4-916c-0800200c9a66");
 
+        List<String> uuidList = [];
         activeDevice
             .discoverServices()
             .then((List<BluetoothService> bluetoothServiceList) {
           for (BluetoothService service in bluetoothServiceList) {
+            print("------>service: ${service.uuid}");
             for (BluetoothCharacteristic characteristic
                 in service.characteristics) {
               //print("service: ${service.uuid} <==> ${characteristic.uuid}");
+              uuidList.add(characteristic.uuid.str);
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
-                _bluetoothWriteCharacteristic = characteristic;
+                characteristics[characteristic.uuid.hashCode] =
+                    CsafeBufferCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid32) {
                 _outputTextController.text += "found guid32\n";
                 _workoutProgressCharacteristic = characteristic;
               } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
-                _strokeDataCharacteristic = characteristic;
-                characteristics[0x35] =
+                characteristics[characteristic.uuid.hashCode] =
                     StrokeDataCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid22) {
                 _outputTextController.text += "found guid22\n";
-                _bluetoothReadCharacteristic = characteristic;
+                characteristics[characteristic.uuid.hashCode] =
+                    CsafeBufferCharacteristic(characteristic);
+              } else {
+                characteristics[characteristic.uuid.hashCode] =
+                    CsafeBufferCharacteristic(characteristic);
               }
             }
           }
+          _updateDropdownItems(uuidList);
           pmBLEDevice = PmBLEDevice(characteristics);
         });
       }
@@ -130,95 +125,50 @@ class _HomeScreenState extends State<HomeScreen> {
     ////////////
   }
 
-  List<int> hexStringToIntArray(String hex) {
-    // Ensure the string length is even
-    if (hex.length % 2 != 0) {
-      throw FormatException('Hex string must have an even length');
-    }
-
-    // Initialize an empty list to store the integers
-    List<int> intArray = [];
-
-    // Loop through the hex string, taking 2 characters at a time
-    for (int i = 0; i < hex.length; i += 2) {
-      // Get the hex substring (2 characters)
-      String hexPair = hex.substring(i, i + 2);
-
-      // Convert the hex pair to an integer and add to the list
-      int value = int.parse(hexPair, radix: 16);
-      intArray.add(value);
-    }
-
-    return intArray;
-  }
-
-  Future<void> sendCommand(List<int> payload, String name) async {
-    List<int> buffer = List<int>.empty(growable: true);
-    int checksum = 0;
-    for (int i = 0; i < payload.length; i++) {
-      checksum ^= payload[i];
-    }
-    for (int i = 0; i < payload.length; i++) {
-      int value = payload[i];
-      if (value >= 0xF0 && value <= 0xF3) {
-        buffer.add(0xF3);
-        buffer.add(value - 0xF0);
-      } else {
-        buffer.add(value);
-      }
-    }
-
-    payload.insert(0, 0xF1);
-    payload.add(checksum);
-    payload.add(0xF2);
-
-    return _bluetoothWriteCharacteristic.write(payload);
-  }
-
   void _handleSetupWorkout() {
     _outputTextController.text += 'clicked _handleSetupWorkout\n';
+    int selectedUuid = dropdownUuidWriteValue.hashCode;
     int distance = 1;
-    sendCommand([0x86], "GOFINISHED").then((v) => {
-          sendCommand([0x87], "GOREADY").then((v) => {
-                sendCommand([0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
+    pmBLEDevice.sendCommand(selectedUuid, [0x86], "GOFINISHED").then((v) => {
+          pmBLEDevice.sendCommand(selectedUuid, [0x87], "GOREADY").then((v) => {
+                pmBLEDevice
+                    .sendCommand(selectedUuid,
+                        [0x21, 0x03, distance, 0x00, 0x22], "SETHORIZONTAL")
                     .then((v) => {
-                          sendCommand([
-                            0x1A,
-                            0x07,
-                            0x05,
-                            0x05,
-                            0x80,
-                            0x64,
-                            0x00,
-                            0x00,
-                            0x00
-                          ], "SETUSERCFG1")
+                          pmBLEDevice
+                              .sendCommand(
+                                  selectedUuid,
+                                  [
+                                    0x1A,
+                                    0x07,
+                                    0x05,
+                                    0x05,
+                                    0x80,
+                                    0x64,
+                                    0x00,
+                                    0x00,
+                                    0x00
+                                  ],
+                                  "SETUSERCFG1")
                               .then((v) => {
-                                    sendCommand([0x24, 0x02, 0x00, 0x00],
+                                    pmBLEDevice
+                                        .sendCommand(
+                                            dropdownUuidWriteValue.hashCode,
+                                            [0x24, 0x02, 0x00, 0x00],
                                             "SETPROGRAM")
                                         .then((v) => {
-                                              sendCommand([0x85], "GOINUSE")
+                                              pmBLEDevice
+                                                  .sendCommand(
+                                                      dropdownUuidWriteValue
+                                                          .hashCode,
+                                                      [0x85],
+                                                      "GOINUSE")
                                                   .then((v) => {})
                                             })
                                   })
                         })
               })
         });
-  }
-
-  String intArrayToHex(List<int> intArray) {
-    for (var value in intArray) {
-      if (value < 0 || value > 255) {
-        throw ArgumentError('All integers must be in the range 0-255.');
-      }
-    }
-
-    // Convert each integer to a two-character hex string and concatenate them
-    final hexStringBuffer = StringBuffer();
-    for (var value in intArray) {
-      hexStringBuffer.write(value.toRadixString(16).padLeft(2, '0'));
-    }
-    return hexStringBuffer.toString();
   }
 
   void _subscribeNotifications() {
@@ -235,38 +185,44 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _handleReadCharacteristic() {
-    _bluetoothReadCharacteristic.setNotifyValue(true);
     _outputTextController.text += 'clicked _handleReadCharacteristic\n';
-    _bluetoothReadCharacteristic.onValueReceived.listen((v2) {
-      print("Received:${intArrayToHex(v2)}\n");
+    pmBLEDevice
+        .readCharacteristic(dropdownUuidReadValue.hashCode)
+        .then((value) {
+      _outputTextController.text += "${DataConvUtils.intArrayToHex(value)}\n";
+      print("Received:${String.fromCharCodes(value)}\n");
+    }).onError((error, stackTrace) {
+      _outputTextController.text += "$error\n";
+      print("Error read: $error");
     });
   }
 
-  void _handleDisconnect() {
-    int ctr = 0;
-    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
-      print('CSAFE_GETHORIZONTAL_CMD\n');
-      sendCommand([0xa1], "CSAFE_GETHORIZONTAL_CMD").then((v1) {
-        print("CSAFE_GETHORIZONTAL_CMD OK");
-      });
-      if (ctr++ > 70) {
-        timer.cancel();
-      }
+  void _handleSubscribeSelected() {
+    //_notificationEnablerCharacteristic.write(List.from([0x01,0x00]));
+    _outputTextController.text += 'clicked _handleSubscribeSelected\n';
+    pmBLEDevice.subscribe<CsafeBuffer>(dropdownUuidReadValue.hashCode).listen(
+        (csafeBuffer) {
+      String dataStr = csafeBuffer.toJson().toString();
+      print("Csafe buffer -> $dataStr");
+    }, onError: (error) {
+      print(error);
+    }, onDone: () {
+      print("Csafe done.");
     });
   }
 
   void _sendCommandOnPush() {
-    String payload = _outputTextController.value.text;
-    var arrPayload = hexStringToIntArray(payload);
-    _bluetoothWriteCharacteristic.write(arrPayload).then((value) {},
-        onError: (err, stack) {
-      print(err);
-    });
+    String payload = _outputTextController.value.text.replaceAll("\n", "");
+    var arrPayload = DataConvUtils.hexStringToIntArray(payload);
+    pmBLEDevice
+        .sendCommand(dropdownUuidWriteValue.hashCode, arrPayload, "ANY")
+        .whenComplete(() => print("done sending any coommand"));
   }
 
   void _CheckSumOnPush() {
     String payloadText = _outputTextController.value.text;
-    List<int> payload = hexStringToIntArray(payloadText.replaceAll(":", ""));
+    List<int> payload =
+        DataConvUtils.hexStringToIntArray(payloadText.replaceAll(":", ""));
     int checksum = 0;
     for (int i = 0; i < payload.length; i++) {
       checksum ^= payload[i];
@@ -315,21 +271,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => _subscribeNotifications()),
           ),
           ListTile(
-            title: const Text("Read 0x0022 char"),
+            title: const Text("Read selected characteristic"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Increase volume by 10',
+                tooltip: 'Read characteristic0x0022',
                 onPressed: () => _handleReadCharacteristic()),
           ),
           ListTile(
-            title: const Text("get horizontal"),
+            title: const Text("Subscribe selected"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
-                onPressed: () => _handleDisconnect()),
+                onPressed: () => _handleSubscribeSelected()),
           ),
           ListTile(
-            title: const Text("Send Command"),
+            title: const Text("Send command in box"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Increase volume by 10',
@@ -341,6 +297,58 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.start),
                 tooltip: 'Check sum on push',
                 onPressed: () => _CheckSumOnPush()),
+          ),
+          ListTile(
+            title: const Text("Read Characteristic"),
+            trailing: DropdownButton<String>(
+              value: dropdownUuidReadValue,
+              icon: const Icon(Icons.list),
+              elevation: 16,
+              style: const TextStyle(color: Colors.deepPurple),
+              underline: Container(
+                height: 2,
+                color: Colors.deepPurpleAccent,
+              ),
+              onChanged: (String? value) {
+                // This is called when the user selects an item.
+                setState(() {
+                  dropdownUuidReadValue = value!;
+                });
+              },
+              items: dropdownUuidRead
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+          ListTile(
+            title: const Text("Write Characteristic"),
+            trailing: DropdownButton<String>(
+              value: dropdownUuidWriteValue,
+              icon: const Icon(Icons.list),
+              elevation: 16,
+              style: const TextStyle(color: Colors.deepPurple),
+              underline: Container(
+                height: 2,
+                color: Colors.deepPurpleAccent,
+              ),
+              onChanged: (String? value) {
+                // This is called when the user selects an item.
+                setState(() {
+                  dropdownUuidWriteValue = value!;
+                });
+              },
+              items: dropdownUuidWrite
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ),
           TextField(
             controller: _outputTextController,
