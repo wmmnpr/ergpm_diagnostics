@@ -25,7 +25,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   final log = Logger('_HomeScreenState');
 
   String data = 'Initial Data';
@@ -40,6 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
   late BluetoothCharacteristic _notificationEnablerCharacteristic;
   late BluetoothCharacteristic _bluetoothReadCharacteristic;
   late BluetoothCharacteristic _workoutProgressCharacteristic;
+
+  CsafeFrameProcessor csafeFrameProcessor = CsafeFrameProcessor();
 
   @override
   void initState() {
@@ -203,6 +204,10 @@ class _HomeScreenState extends State<HomeScreen> {
         .then((value) {
       _outputTextController.text += "${DataConvUtils.intArrayToHex(value)}\n";
       log.info("Received:${String.fromCharCodes(value)}\n");
+
+      Map<String, Object> response =
+          csafeFrameProcessor.deserializePropFrame(value);
+      log.info(response);
     }).onError((error, stackTrace) {
       _outputTextController.text += "$error\n";
       log.info("Error read: $error");
@@ -216,6 +221,9 @@ class _HomeScreenState extends State<HomeScreen> {
         (csafeBuffer) {
       String dataStr = csafeBuffer.toJson().toString();
       log.info("Csafe buffer -> $dataStr");
+      Map<String, Object> parsed =
+          csafeFrameProcessor.deserializePropFrame(csafeBuffer.buffer);
+      log.info("parsed frame -> $parsed");
     }, onError: (error) {
       log.info(error);
     }, onDone: () {
@@ -224,23 +232,38 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _sendCommandOnPush() {
-    String payload = _outputTextController.value.text.replaceAll("\n", "");
+    String payload = _outputTextController.value.text
+        .replaceAll("\n", "")
+        .replaceAll(" ", "");
     var arrPayload = DataConvUtils.hexStringToIntArray(payload);
     pmBLEDevice
         .sendCommand(dropdownUuidWriteValue.hashCode, arrPayload, "ANY")
-        .whenComplete(() => log.info("done sending any coommand"));
+        .whenComplete(() => log.info("done sending any command"))
+        .onError((error, stackTrace) => print(error))
+        .catchError((err) {
+      print(err);
+    });
   }
 
-  void _CheckSumOnPush() {
-    String payloadText = _outputTextController.value.text;
-    List<int> payload =
-        DataConvUtils.hexStringToIntArray(payloadText.replaceAll(":", ""));
-    int checksum = 0;
-    for (int i = 0; i < payload.length; i++) {
-      checksum ^= payload[i];
-    }
-    _outputTextController.text +=
-        "checksum=" + checksum.toRadixString(16).padLeft(2, '0');
+  void _SendApiCommand() {
+    String distance = _outputTextController.value.text
+        .replaceAll("\n", "")
+        .replaceAll(" ", "");
+    List<CSafeCommand> commandList = [];
+    commandList.add(CSafeSetWorkoutType.build());
+    commandList
+        .add(CSafeSetWorkoutDuration.build(duration: int.parse(distance)));
+    commandList.add(CSafeSetSplitDuration.build(duration: 400));
+    commandList.add(CSafeConfigureWorkout.build());
+    commandList.add(CSafeSetScreenState.build());
+    CSafeCommandFrame commandFrame = CSafeCommandFrame(commandList);
+    IntList buffer = commandFrame.toBytes();
+    pmBLEDevice
+        .sendCommand(dropdownUuidWriteValue.hashCode, buffer, "API")
+        .whenComplete(() => {
+              pmBLEDevice.sendCommand(
+                  dropdownUuidWriteValue.hashCode, [0x85], "GOINUSE")
+            });
   }
 
   @override
@@ -297,18 +320,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => _handleSubscribeSelected()),
           ),
           ListTile(
-            title: const Text("Send command 'Input/Output Window' to selected 'Write Characteristic'"),
+            title: const Text(
+                "Send command 'Input/Output Window' to selected 'Write Characteristic'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
                 tooltip: 'Send command',
                 onPressed: () => _sendCommandOnPush()),
           ),
           ListTile(
-            title: const Text("Checksum in 'Input/Output Window'"),
+            title: const Text("Send Command using API'"),
             trailing: IconButton(
                 icon: const Icon(Icons.start),
-                tooltip: 'Check sum on push',
-                onPressed: () => _CheckSumOnPush()),
+                tooltip: 'Send Command using API',
+                onPressed: () => _SendApiCommand()),
           ),
           ListTile(
             title: const Text("Read Characteristic"),
