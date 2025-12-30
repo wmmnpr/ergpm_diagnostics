@@ -11,9 +11,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ergpm_diagnostics/main.dart';
 
 void main() {
+
+  testWidgets('quicktest', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    final hex = "ce060022-43e5-11e4-916c-0800200c9a66".replaceAll('-', '');
+    int value = int.parse(hex, radix: 16);
+    print("value is: ${value}");
+
+
+  });
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(HomeScreen());
+    await tester.pumpWidget(const HomeScreen());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
@@ -27,5 +36,6 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+
 
 }

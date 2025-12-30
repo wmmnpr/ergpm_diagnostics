@@ -16,10 +16,12 @@ void main() {
   final log = Logger('main');
   log.info("---------- startring ergpm_diagnostics ---------");
 
-  runApp(MaterialApp(home: HomeScreen()));
+  runApp(const MaterialApp(home: HomeScreen()));
 }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -72,15 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     BluetoothDevice returnedDevice = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ScanScreen()),
+      MaterialPageRoute(builder: (context) => const ScanScreen()),
     );
-    if (returnedDevice != null) {
-      _outputTextController.text += returnedDevice.toString();
-      setState(() {
-        activeDevice = returnedDevice;
-      });
+    _outputTextController.text += returnedDevice.toString();
+    setState(() {
+      activeDevice = returnedDevice;
+    });
     }
-  }
 
   void _handleConnect() {
     _outputTextController.text += 'clicked _handleConnect\n';
@@ -107,26 +107,29 @@ class _HomeScreenState extends State<HomeScreen> {
             log.info("------>service: ${service.uuid}");
             for (BluetoothCharacteristic characteristic
                 in service.characteristics) {
-              //log.info("service: ${service.uuid} <==> ${characteristic.uuid}");
+              log.info("service: ${service.uuid} <==> ${characteristic.uuid}");
               uuidList.add(characteristic.uuid.str);
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
-                characteristics[characteristic.uuid.hashCode] =
+                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
                     CsafeBufferCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid32) {
                 _outputTextController.text += "found guid32\n";
                 _workoutProgressCharacteristic = characteristic;
               } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
-                characteristics[characteristic.uuid.hashCode] =
+                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
                     StrokeDataCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid22) {
                 _outputTextController.text += "found guid22\n";
-                characteristics[characteristic.uuid.hashCode] =
+                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
                     CsafeBufferCharacteristic(characteristic);
               } else {
-                characteristics[characteristic.uuid.hashCode] =
-                    CsafeBufferCharacteristic(characteristic);
+                try {
+                  characteristics[
+                          int.parse(characteristic.uuid.str, radix: 16)] =
+                      CsafeBufferCharacteristic(characteristic);
+                } catch (ex) {}
               }
             }
           }
@@ -217,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleSubscribeSelected() {
     //_notificationEnablerCharacteristic.write(List.from([0x01,0x00]));
     _outputTextController.text += 'clicked _handleSubscribeSelected\n';
-    pmBLEDevice.subscribe<CsafeBuffer>(dropdownUuidReadValue.hashCode).listen(
+    pmBLEDevice.subscribe<CsafeBuffer>(int.parse(dropdownUuidReadValue, radix: 16)).listen(
         (csafeBuffer) {
       String dataStr = csafeBuffer.toJson().toString();
       log.info("Csafe buffer -> $dataStr");
@@ -260,9 +263,9 @@ class _HomeScreenState extends State<HomeScreen> {
     IntList buffer = commandFrame.toBytes();
     pmBLEDevice
         .sendCommand(dropdownUuidWriteValue.hashCode, buffer, "API")
-        .whenComplete(() => {
+        .whenComplete(() {
               pmBLEDevice.sendCommand(
-                  dropdownUuidWriteValue.hashCode, [0x85], "GOINUSE")
+                  dropdownUuidWriteValue.hashCode, [0x85], "GOINUSE");
             });
   }
 
