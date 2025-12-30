@@ -1,7 +1,13 @@
 # ergpm_diagnostics
+2025.12.30 - revive project by removing old dependencies and integrating new versions of libraries. 
+The, from a PM functionality perspective, important libraries are:
+flutter_blue_plus (eventually should be abstracted away by the usage of flutter_ble_c2pm)
+flutter_ble_c2pm
+App can be installed on phone or run from Intellij:
+![Alt text](doc/howto-run-from-intellij.png)
 
-# usage
-Execute step 1 and 2. Notice, in screenshot, which characteristics are selected.
+# usage of app
+Execute Step 1 and Step 2, which are shown in screenshot below. Notice which characteristics are selected.
 ![Alt text](doc/howto-use-simple.png)
 
 A new Flutter project.
