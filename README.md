@@ -1,5 +1,9 @@
 # ergpm_diagnostics
 
+# usage
+Execute step 1 and 2. Notice, in screenshot, which characteristics are selected.
+![Alt text](doc/howto-use-simple.png)
+
 A new Flutter project.
 
 ## Getting Started

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:ergc2_pm_csafe/ergc2_pm_csafe.dart';
+import 'package:flutter_ble_c2pm/flutter_ble_c2pm.dart';
 import 'package:ergpm_diagnostics/pm_ble_characteristic.dart';
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
@@ -111,25 +111,27 @@ class _HomeScreenState extends State<HomeScreen> {
               uuidList.add(characteristic.uuid.str);
               if (characteristic.characteristicUuid == guid21) {
                 _outputTextController.text += "found guid21\n";
-                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
+                characteristics[guid21.hashCode] =
                     CsafeBufferCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid32) {
                 _outputTextController.text += "found guid32\n";
                 _workoutProgressCharacteristic = characteristic;
               } else if (characteristic.characteristicUuid == guid35) {
                 _outputTextController.text += "found guid35\n";
-                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
+                characteristics[guid35.hashCode] =
                     StrokeDataCharacteristic(characteristic);
               } else if (characteristic.characteristicUuid == guid22) {
                 _outputTextController.text += "found guid22\n";
-                characteristics[int.parse(characteristic.uuid.str, radix: 16)] =
+                characteristics[guid22.hashCode] =
                     CsafeBufferCharacteristic(characteristic);
               } else {
                 try {
-                  characteristics[
-                          int.parse(characteristic.uuid.str, radix: 16)] =
+                  Guid unspecified = Guid(characteristic.uuid.str);
+                  characteristics[unspecified.hashCode] =
                       CsafeBufferCharacteristic(characteristic);
-                } catch (ex) {}
+                } catch (ex) {
+                  log.severe("error -> service: ${service.uuid} exception: ${ex.toString()}");
+                }
               }
             }
           }

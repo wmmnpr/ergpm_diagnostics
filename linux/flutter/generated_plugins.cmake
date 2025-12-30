@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  flutter_concept2_pm
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
