@@ -32,5 +32,9 @@
 	<string></string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>ErgoPM diagnostics needs access to BLE to work properly</string>
+    <key>NSCameraUsageDescription</key>
+    <string>your usage description here</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>your usage description here</string>
 </dict>
 </plist>

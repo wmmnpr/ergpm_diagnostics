@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>ErgoPM diagnostics needs access to BLE to work properly</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs camera access</string>
 </dict>
 </plist>

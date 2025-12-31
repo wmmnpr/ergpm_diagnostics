@@ -1,0 +1,296 @@
+flutter: INFO: 2025-12-31 15:38:37.255396: Csafe buffer -> {buffer: 69000000000000005000500050004f004f004f00}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+flutter: INFO: 2025-12-31 15:38:37.258248: Csafe buffer -> {buffer: 69014c004c004c004e004e004e004b004b004b00}
+flutter: INFO: 2025-12-31 15:38:37.258564: Csafe buffer -> {buffer: 69024800480048004a004a004800480048004600}
+flutter: INFO: 2025-12-31 15:38:37.258717: Csafe buffer -> {buffer: 69034600470047003e003e003e00350035003000}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+flutter: INFO: 2025-12-31 15:38:37.259599: Csafe buffer -> {buffer: 690430002c002c002600260026001d001d001000}
+2025-12-31 15:38:37.258 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:37.258 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:37.351 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:37.351 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:37.352611: Csafe buffer -> {buffer: 6905100003000300000000000000000000000000}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:38.716 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.717 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:38.719581: Csafe buffer -> {buffer: 69000100010001000e000e00220022002d002d00}
+flutter: INFO: 2025-12-31 15:38:38.721706: Csafe buffer -> {buffer: 69013600360036003e003e004a004a0050005000}
+flutter: INFO: 2025-12-31 15:38:38.722068: Csafe buffer -> {buffer: 6902530053005900590055005500530051005100}
+flutter: INFO: 2025-12-31 15:38:38.722482: Csafe buffer -> {buffer: 69034f004f004a004a004300430037002f002f00}
+flutter: INFO: 2025-12-31 15:38:38.722646: Csafe buffer -> {buffer: 6904280028001a001a0010000700070004000400}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:38.720 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.720 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:38.720 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.720 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:38.720 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.721 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:38.721 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.721 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:38.820 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:38.820 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:38.822824: Csafe buffer -> {buffer: 620500000000}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:40.186 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:40.186 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:40.186583: Csafe buffer -> {buffer: 5900120012001f001f003000300038003d003d00}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:40.187 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:40.187875: Csafe buffer -> {buffer: 590142004200470047004a004f004f004f004f00}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+flutter: INFO: 2025-12-31 15:38:40.188015: Csafe buffer -> {buffer: 590254005a005a00560056004f004b004b004100}
+flutter: INFO: 2025-12-31 15:38:40.188083: Csafe buffer -> {buffer: 590336003600280028001d00140014000b000400}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:40.189 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:40.189 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:40.189729: Csafe buffer -> {buffer: 5304040000000000}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:41.552 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:41.552 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:41.553 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:41.553 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+flutter: INFO: 2025-12-31 15:38:41.554543: Csafe buffer -> {buffer: 4900120012001e001e002e00360036003b003b00}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+flutter: INFO: 2025-12-31 15:38:41.555014: Csafe buffer -> {buffer: 49013d0040004000410041004600460046004a00}
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+2025-12-31 15:38:41.555 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:41.555 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+2025-12-31 15:38:41.555 ergpm_diagnostics[52277:22205383] [FBP-iOS] didUpdateValueForCharacteristic:
+2025-12-31 15:38:41.555 ergpm_diagnostics[52277:22205383] [FBP-iOS]   chr: ce06003d-43e5-11e4-916c-0800200c9a66
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: no start byte
+#0      CsafeFrameProcessor.deserializePropFrame (package:flutter_ble_c2pm/src/csafe/csafe_commands.dart:76:9)
+#1      _HomeScreenState._handleSubscribeSelected.<anonymous closure> (package:ergpm_diagnostics/main.dart:231:31)
+#2      _RootZone.runUnaryGuarded (dart:async/zone.dart:1778:10)
+#3      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#4      _DelayedData.perform (dart:async/stream_impl.dart:573:14)
+#5      _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)
+#6      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)
+#7      _microtaskLoop (dart:async/schedule_microtask.dart:40:35)
+#8      _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+
+
+69
+00
+0100
+0100
+0100
+0e00
+0e00
+2200
+2200
+2d00
+2d00

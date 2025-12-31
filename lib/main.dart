@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:ergpm_diagnostics/screens/pose_detector_view.dart';
 import 'package:flutter_ble_c2pm/flutter_ble_c2pm.dart';
 import 'package:ergpm_diagnostics/pm_ble_characteristic.dart';
 import 'package:ergpm_diagnostics/screens/scan_screen.dart';
@@ -222,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleSubscribeSelected() {
     //_notificationEnablerCharacteristic.write(List.from([0x01,0x00]));
     _outputTextController.text += 'clicked _handleSubscribeSelected\n';
-    pmBLEDevice.subscribe<CsafeBuffer>(int.parse(dropdownUuidReadValue, radix: 16)).listen(
+    pmBLEDevice.subscribe<CsafeBuffer>(Guid(dropdownUuidReadValue).hashCode).listen(
         (csafeBuffer) {
       String dataStr = csafeBuffer.toJson().toString();
       log.info("Csafe buffer -> $dataStr");
@@ -269,6 +270,18 @@ class _HomeScreenState extends State<HomeScreen> {
               pmBLEDevice.sendCommand(
                   dropdownUuidWriteValue.hashCode, [0x85], "GOINUSE");
             });
+  }
+  Future<void> _handlePoseDetection(BuildContext context) async {
+    _outputTextController.text += 'clicked _handlePoseDetection\n';
+
+    BluetoothDevice returnedDevice = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PoseDetectorView()),
+    );
+    _outputTextController.text += returnedDevice.toString();
+    setState(() {
+      activeDevice = returnedDevice;
+    });
   }
 
   @override
@@ -338,6 +351,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.start),
                 tooltip: 'Send Command using API',
                 onPressed: () => _SendApiCommand()),
+          ),
+          ListTile(
+            title: const Text("pose detector"),
+            trailing: IconButton(
+                icon: const Icon(Icons.start),
+                tooltip: 'Send Command using API',
+                onPressed: () => _handlePoseDetection(context)),
           ),
           ListTile(
             title: const Text("Read Characteristic"),
